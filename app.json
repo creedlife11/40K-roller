@@ -4,24 +4,13 @@
     "slug": "40k-roller",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#0d0d0d"
-    },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0d0d0d"
-      },
       "package": "com.fortyKroller.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
       "bundler": "metro",
-      "output": "static",
+      "output": "single",
       "name": "40K Roller",
       "description": "Warhammer 40K dice rolling statistics app",
       "themeColor": "#c41e3a",
