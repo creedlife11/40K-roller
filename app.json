@@ -19,7 +19,13 @@
       "package": "com.fortyKroller.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "static",
+      "name": "40K Roller",
+      "description": "Warhammer 40K dice rolling statistics app",
+      "themeColor": "#c41e3a",
+      "backgroundColor": "#0d0d0d"
     },
     "plugins": []
   }

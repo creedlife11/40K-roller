@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, Platform, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { StatusBar } from 'expo-status-bar';
@@ -19,6 +20,9 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <StatusBar style="light" backgroundColor={COLORS.bg} />
+        {/* On web, centre the app in a phone-width column */}
+        <View style={Platform.OS === 'web' ? webStyles.outerWrapper : { flex: 1 }}>
+          <View style={Platform.OS === 'web' ? webStyles.phoneFrame : { flex: 1 }}>
         <NavigationContainer
           theme={{
             dark: true,
@@ -72,7 +76,25 @@ export default function App() {
             <Tab.Screen name="Custom" component={CustomScreen} />
           </Tab.Navigator>
         </NavigationContainer>
+          </View>
+        </View>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }
+
+const webStyles = StyleSheet.create({
+  outerWrapper: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#000',
+  },
+  phoneFrame: {
+    width: '100%',
+    maxWidth: 480,
+    flex: 1,
+    overflow: 'hidden',
+    backgroundColor: COLORS.bg,
+  },
+});

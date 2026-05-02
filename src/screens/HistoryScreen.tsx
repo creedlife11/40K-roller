@@ -15,7 +15,7 @@ import { useStorage } from '../hooks/useStorage';
 import { HistoryEntry, StandardRoll, WH40KRoll, CustomRoll } from '../types';
 import { computeDistribution, average } from '../utils/diceEngine';
 
-const SCREEN_W = Dimensions.get('window').width;
+const SCREEN_W = Math.min(Dimensions.get('window').width, 480);
 
 type Filter = 'all' | 'standard' | 'wh40k' | 'custom';
 
