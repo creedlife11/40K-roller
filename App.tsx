@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Platform, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StatusBar } from 'expo-status-bar';
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -19,7 +19,6 @@ export default function App() {
   return (
     <GestureHandlerRootView style={Platform.OS === 'web' ? { flex: 1, height: '100vh' as any } : { flex: 1 }}>
       <SafeAreaProvider>
-        <StatusBar style="light" backgroundColor={COLORS.bg} />
         {/* On web, centre the app in a phone-width column */}
         <View style={Platform.OS === 'web' ? webStyles.outerWrapper : { flex: 1 }}>
           <View style={Platform.OS === 'web' ? webStyles.phoneFrame : { flex: 1 }}>
