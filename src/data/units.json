@@ -1,0 +1,319 @@
+{
+  "version": "10e",
+  "source": "BSData/wh40k-10e (community data)",
+  "units": [
+    {
+      "id": "sm-intercessors",
+      "name": "Intercessor Squad",
+      "faction": "Space Marines",
+      "keywords": ["Infantry", "Intercessors", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "bolt-rifle", "name": "Bolt Rifle", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "bolt-pistol", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "ccw-sm", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "sm-assault-intercessors",
+      "name": "Assault Intercessors",
+      "faction": "Space Marines",
+      "keywords": ["Infantry", "Intercessors", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "heavy-bolt-pistol", "name": "Heavy Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 5, "ap": -1, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "astartes-chainsword", "name": "Astartes Chainsword", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "sm-terminators",
+      "name": "Terminator Squad",
+      "faction": "Space Marines",
+      "keywords": ["Infantry", "Terminator", "Adeptus Astartes"],
+      "stats": { "move": 5, "toughness": 5, "save": 2, "wounds": 3, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "storm-bolter", "name": "Storm Bolter", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 2"] },
+        { "id": "power-fist", "name": "Power Fist", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 8, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "sm-tactical",
+      "name": "Tactical Squad",
+      "faction": "Space Marines",
+      "keywords": ["Infantry", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "boltgun", "name": "Boltgun", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "bolt-pistol-2", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "ccw-tac", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "sm-dreadnought",
+      "name": "Dreadnought",
+      "faction": "Space Marines",
+      "keywords": ["Walker", "Vehicle", "Dreadnought", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 9, "save": 2, "wounds": 8, "leadership": 6, "oc": 3 },
+      "weapons": [
+        { "id": "multi-melta", "name": "Multi-Melta", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 9, "ap": -4, "damage": "d6+2", "keywords": ["MELTA 2"] },
+        { "id": "dread-ccw", "name": "Dreadnought Combat Weapon", "type": "melee", "range": "Melee", "attacks": "5", "skill": 3, "strength": 12, "ap": -2, "damage": "3", "keywords": [] }
+      ]
+    },
+    {
+      "id": "sm-chaplain",
+      "name": "Chaplain",
+      "faction": "Space Marines",
+      "keywords": ["Infantry", "Character", "Chaplain", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 4, "leadership": 5, "oc": 1 },
+      "weapons": [
+        { "id": "absolvor-bolt-pistol", "name": "Absolvor Bolt Pistol", "type": "ranged", "range": "18\"", "attacks": "1", "skill": 2, "strength": 5, "ap": -1, "damage": "2", "keywords": ["PISTOL"] },
+        { "id": "crozius-arcanum", "name": "Crozius Arcanum", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 6, "ap": -1, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "csm-chaos-space-marines",
+      "name": "Chaos Space Marines",
+      "faction": "Chaos Space Marines",
+      "keywords": ["Infantry", "Chaos", "Heretic Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 2, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "csm-boltgun", "name": "Boltgun", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "csm-bolt-pistol", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "csm-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "csm-terminators",
+      "name": "Chaos Terminators",
+      "faction": "Chaos Space Marines",
+      "keywords": ["Infantry", "Terminator", "Chaos", "Heretic Astartes"],
+      "stats": { "move": 5, "toughness": 5, "save": 2, "wounds": 3, "leadership": 7, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "combi-bolter", "name": "Combi-Bolter", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 2"] },
+        { "id": "accursed-weapon", "name": "Accursed Weapon", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 5, "ap": -2, "damage": "1", "keywords": [] },
+        { "id": "csm-power-fist", "name": "Power Fist", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 8, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "csm-daemon-prince",
+      "name": "Daemon Prince",
+      "faction": "Chaos Space Marines",
+      "keywords": ["Monster", "Character", "Daemon", "Chaos"],
+      "stats": { "move": 8, "toughness": 7, "save": 3, "wounds": 8, "leadership": 7, "oc": 2, "invuln": 5 },
+      "weapons": [
+        { "id": "malefic-talon", "name": "Malefic Talon (×2)", "type": "melee", "range": "Melee", "attacks": "6", "skill": 3, "strength": 8, "ap": -2, "damage": "2", "keywords": ["TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "nec-warriors-reaper",
+      "name": "Necron Warriors",
+      "faction": "Necrons",
+      "keywords": ["Infantry", "Necrons"],
+      "stats": { "move": 5, "toughness": 4, "save": 4, "wounds": 1, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "gauss-reaper", "name": "Gauss Reaper", "type": "ranged", "range": "12\"", "attacks": "2", "skill": 3, "strength": 5, "ap": -1, "damage": "1", "keywords": ["LETHAL HITS"] },
+        { "id": "gauss-flayer", "name": "Gauss Flayer", "type": "ranged", "range": "24\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["LETHAL HITS"] },
+        { "id": "warrior-ccw", "name": "Crude Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "nec-immortals",
+      "name": "Immortals",
+      "faction": "Necrons",
+      "keywords": ["Infantry", "Necrons"],
+      "stats": { "move": 5, "toughness": 5, "save": 3, "wounds": 2, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "gauss-blaster", "name": "Gauss Blaster", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 5, "ap": -2, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "tesla-carbine", "name": "Tesla Carbine", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 5, "ap": 0, "damage": "1", "keywords": ["SUSTAINED HITS 2"] },
+        { "id": "immortal-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 4, "strength": 5, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "nec-lychguard",
+      "name": "Lychguard",
+      "faction": "Necrons",
+      "keywords": ["Infantry", "Necrons"],
+      "stats": { "move": 5, "toughness": 5, "save": 3, "wounds": 3, "leadership": 7, "oc": 2, "invuln": 4 },
+      "weapons": [
+        { "id": "hyperphase-warscythe", "name": "Hyperphase Warscythe", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 9, "ap": -4, "damage": "3", "keywords": [] },
+        { "id": "hyperphase-sword", "name": "Hyperphase Sword", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 7, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "nec-overlord",
+      "name": "Necron Overlord",
+      "faction": "Necrons",
+      "keywords": ["Infantry", "Character", "Necrons"],
+      "stats": { "move": 6, "toughness": 6, "save": 3, "wounds": 5, "leadership": 7, "oc": 2, "invuln": 4 },
+      "weapons": [
+        { "id": "overlords-blade", "name": "Overlord's Blade", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 7, "ap": -2, "damage": "2", "keywords": [] },
+        { "id": "tachyon-arrow", "name": "Tachyon Arrow", "type": "ranged", "range": "120\"", "attacks": "1", "skill": 2, "strength": 16, "ap": -5, "damage": "8", "keywords": ["ONE SHOT"] }
+      ]
+    },
+    {
+      "id": "ork-boyz",
+      "name": "Boyz",
+      "faction": "Orks",
+      "keywords": ["Infantry", "Mob", "Orks"],
+      "stats": { "move": 5, "toughness": 5, "save": 5, "wounds": 1, "leadership": 8, "oc": 2 },
+      "weapons": [
+        { "id": "slugga", "name": "Slugga", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 5, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "choppa", "name": "Choppa", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 5, "ap": -1, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ork-nobz",
+      "name": "Nobz",
+      "faction": "Orks",
+      "keywords": ["Infantry", "Nob", "Orks"],
+      "stats": { "move": 5, "toughness": 5, "save": 4, "wounds": 2, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "nob-slugga", "name": "Slugga", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 5, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "big-choppa", "name": "Big Choppa", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 7, "ap": -1, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ork-warboss",
+      "name": "Warboss",
+      "faction": "Orks",
+      "keywords": ["Infantry", "Character", "Warboss", "Orks"],
+      "stats": { "move": 5, "toughness": 6, "save": 2, "wounds": 6, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "boss-klaw", "name": "Boss Klaw", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 10, "ap": -2, "damage": "3", "keywords": [] },
+        { "id": "attack-squig", "name": "Attack Squig", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 5, "ap": -1, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "tyr-hormagaunts",
+      "name": "Hormagaunts",
+      "faction": "Tyranids",
+      "keywords": ["Infantry", "Hormagaunt", "Tyranids"],
+      "stats": { "move": 8, "toughness": 3, "save": 5, "wounds": 1, "leadership": 8, "oc": 1 },
+      "weapons": [
+        { "id": "scything-talons", "name": "Scything Talons", "type": "melee", "range": "Melee", "attacks": "3", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "tyr-termagants",
+      "name": "Termagants",
+      "faction": "Tyranids",
+      "keywords": ["Infantry", "Termagant", "Tyranids"],
+      "stats": { "move": 6, "toughness": 3, "save": 5, "wounds": 1, "leadership": 8, "oc": 1 },
+      "weapons": [
+        { "id": "fleshborer", "name": "Fleshborer", "type": "ranged", "range": "18\"", "attacks": "1", "skill": 4, "strength": 5, "ap": 0, "damage": "1", "keywords": [] },
+        { "id": "termagant-claws", "name": "Termagant Claws & Teeth", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "tyr-genestealers",
+      "name": "Genestealers",
+      "faction": "Tyranids",
+      "keywords": ["Infantry", "Genestealer", "Tyranids"],
+      "stats": { "move": 8, "toughness": 4, "save": 5, "wounds": 2, "leadership": 8, "oc": 1, "invuln": 5 },
+      "weapons": [
+        { "id": "rending-claws", "name": "Rending Claws", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 6, "ap": -2, "damage": "1", "keywords": ["LETHAL HITS"] },
+        { "id": "feeder-tendril", "name": "Feeder Tendril", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "tyr-carnifex",
+      "name": "Carnifex",
+      "faction": "Tyranids",
+      "keywords": ["Monster", "Carnifex", "Tyranids"],
+      "stats": { "move": 8, "toughness": 9, "save": 3, "wounds": 10, "leadership": 8, "oc": 3 },
+      "weapons": [
+        { "id": "bio-plasma", "name": "Bio-plasma", "type": "ranged", "range": "12\"", "attacks": "3", "skill": 4, "strength": 7, "ap": -2, "damage": "2", "keywords": ["BLAST"] },
+        { "id": "monstrous-scything-talons", "name": "Monstrous Scything Talons (×2)", "type": "melee", "range": "Melee", "attacks": "6", "skill": 4, "strength": 12, "ap": -2, "damage": "3", "keywords": ["TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "eld-guardian-defenders",
+      "name": "Guardian Defenders",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Guardian", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 5, "wounds": 1, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "shuriken-catapult", "name": "Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "guardian-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-dire-avengers",
+      "name": "Dire Avengers",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 4, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "avenger-catapult", "name": "Avenger Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "diresword", "name": "Diresword", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 4, "ap": -2, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-wraithguard",
+      "name": "Wraithguard",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Wraith Construct", "Aeldari"],
+      "stats": { "move": 6, "toughness": 7, "save": 3, "wounds": 3, "leadership": 6, "oc": 1, "invuln": 5 },
+      "weapons": [
+        { "id": "d-scythe", "name": "D-Scythe", "type": "ranged", "range": "8\"", "attacks": "2", "skill": 4, "strength": 10, "ap": -4, "damage": "d3", "keywords": ["TORRENT"] },
+        { "id": "wraithblade", "name": "Wraithblade", "type": "melee", "range": "Melee", "attacks": "4", "skill": 4, "strength": 6, "ap": -3, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "dg-plague-marines",
+      "name": "Plague Marines",
+      "faction": "Death Guard",
+      "keywords": ["Infantry", "Plague Marine", "Death Guard"],
+      "stats": { "move": 5, "toughness": 5, "save": 3, "wounds": 2, "leadership": 6, "oc": 1, "fnp": 5 },
+      "weapons": [
+        { "id": "pm-boltgun", "name": "Boltgun", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "plague-weapon", "name": "Plague Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
+      "id": "dg-poxwalkers",
+      "name": "Poxwalkers",
+      "faction": "Death Guard",
+      "keywords": ["Infantry", "Poxwalker", "Death Guard"],
+      "stats": { "move": 5, "toughness": 3, "save": 7, "wounds": 1, "leadership": 8, "oc": 1, "fnp": 5 },
+      "weapons": [
+        { "id": "improvised-weapon", "name": "Improvised Weapon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 5, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "am-infantry-squad",
+      "name": "Infantry Squad",
+      "faction": "Astra Militarum",
+      "keywords": ["Infantry", "Regiment", "Astra Militarum"],
+      "stats": { "move": 6, "toughness": 3, "save": 5, "wounds": 1, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "lasgun", "name": "Lasgun", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 1"] },
+        { "id": "laspistol", "name": "Laspistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "bayonet", "name": "Bayonet", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "am-leman-russ",
+      "name": "Leman Russ Battle Tank",
+      "faction": "Astra Militarum",
+      "keywords": ["Vehicle", "Regiment", "Astra Militarum"],
+      "stats": { "move": 10, "toughness": 11, "save": 2, "wounds": 13, "leadership": 7, "oc": 3 },
+      "weapons": [
+        { "id": "battle-cannon", "name": "Battle Cannon", "type": "ranged", "range": "48\"", "attacks": "d6+1", "skill": 4, "strength": 10, "ap": -2, "damage": "3", "keywords": ["BLAST"] },
+        { "id": "hull-lascannon", "name": "Lascannon", "type": "ranged", "range": "48\"", "attacks": "1", "skill": 4, "strength": 12, "ap": -3, "damage": "d6+1", "keywords": ["HEAVY"] },
+        { "id": "tank-ccw", "name": "Tank Tracks", "type": "melee", "range": "Melee", "attacks": "d6", "skill": 4, "strength": 8, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "mech-skitarii-rangers",
+      "name": "Skitarii Rangers",
+      "faction": "Adeptus Mechanicus",
+      "keywords": ["Infantry", "Skitarii", "Adeptus Mechanicus"],
+      "stats": { "move": 6, "toughness": 3, "save": 4, "wounds": 2, "leadership": 7, "oc": 2 },
+      "weapons": [
+        { "id": "galvanic-rifle", "name": "Galvanic Rifle", "type": "ranged", "range": "30\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "2", "keywords": ["HEAVY"] },
+        { "id": "ranger-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import WH40KScreen from './src/screens/WH40KScreen';
 import HistoryScreen from './src/screens/HistoryScreen';
 import CustomScreen from './src/screens/CustomScreen';
+import ChargeScreen from './src/screens/ChargeScreen';
 import { COLORS } from './src/theme';
 
 const Tab = createBottomTabNavigator();
@@ -59,11 +60,21 @@ function D20Icon({ color, size }: { color: string; size: number }) {
   );
 }
 
+function ChargeIcon({ color, size }: { color: string; size: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <Path d="M5 12h14M13 6l6 6-6 6" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <Path d="M3 7l4-4M3 17l4 4" stroke={color} strokeWidth="2" strokeLinecap="round" />
+    </Svg>
+  );
+}
+
 const TAB_ICONS: Record<string, React.ComponentType<{ color: string; size: number }>> = {
   Roll: DiceIcon,
   '40K': SwordIcon,
   History: ChartIcon,
   Custom: D20Icon,
+  Charge: ChargeIcon,
 };
 
 export default function App() {
@@ -110,6 +121,7 @@ export default function App() {
               >
                 <Tab.Screen name="Roll" component={HomeScreen} />
                 <Tab.Screen name="40K" component={WH40KScreen} />
+                <Tab.Screen name="Charge" component={ChargeScreen} />
                 <Tab.Screen name="History" component={HistoryScreen} />
                 <Tab.Screen name="Custom" component={CustomScreen} />
               </Tab.Navigator>

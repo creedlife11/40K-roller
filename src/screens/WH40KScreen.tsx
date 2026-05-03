@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,7 @@ import {
   Modal,
   Vibration,
   Platform,
+  FlatList,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { COLORS, SPACING, RADIUS, FONTS } from '../theme';
@@ -25,7 +26,8 @@ import {
 } from '../utils/wh40k';
 import { generateId } from '../utils/diceEngine';
 import { useStorage } from '../hooks/useStorage';
-import { CombatInput, WH40KRoll, HistoryEntry } from '../types';
+import { CombatInput, WH40KRoll, HistoryEntry, UnitProfile, WeaponProfile } from '../types';
+import { searchUnits, ALL_FACTIONS } from '../utils/unitData';
 
 const DEFAULT_INPUT: CombatInput = {
   attackerName: 'Space Marine',
@@ -288,6 +290,277 @@ const dmStyles = StyleSheet.create({
   closeBtnText: { color: COLORS.white, fontWeight: '700', letterSpacing: 1.5 },
 });
 
+// ── Unit selector modal ───────────────────────────────────────────────────────
+type SelectMode = 'attacker' | 'target';
+
+function UnitSelectorModal({
+  visible,
+  mode,
+  onSelectUnit,
+  onClose,
+}: {
+  visible: boolean;
+  mode: SelectMode;
+  onSelectUnit: (unit: UnitProfile, weapon?: WeaponProfile) => void;
+  onClose: () => void;
+}) {
+  const [query, setQuery] = useState('');
+  const [faction, setFaction] = useState<string | undefined>(undefined);
+  const [selectedUnit, setSelectedUnit] = useState<UnitProfile | null>(null);
+
+  const units = useMemo(() => searchUnits(query, faction), [query, faction]);
+
+  const handleUnitPress = (unit: UnitProfile) => {
+    if (mode === 'target') {
+      onSelectUnit(unit);
+      resetAndClose();
+    } else {
+      setSelectedUnit(unit);
+    }
+  };
+
+  const handleWeaponPress = (weapon: WeaponProfile) => {
+    if (selectedUnit) {
+      onSelectUnit(selectedUnit, weapon);
+      resetAndClose();
+    }
+  };
+
+  const resetAndClose = () => {
+    setQuery('');
+    setFaction(undefined);
+    setSelectedUnit(null);
+    onClose();
+  };
+
+  return (
+    <Modal visible={visible} animationType="slide" transparent>
+      <View style={usmStyles.overlay}>
+        <View style={usmStyles.sheet}>
+          <View style={usmStyles.header}>
+            <Text style={usmStyles.headerTitle}>
+              {selectedUnit ? 'SELECT WEAPON' : mode === 'attacker' ? 'SELECT ATTACKER' : 'SELECT TARGET'}
+            </Text>
+            <TouchableOpacity onPress={resetAndClose} style={usmStyles.closeBtn}>
+              <Text style={usmStyles.closeBtnText}>✕</Text>
+            </TouchableOpacity>
+          </View>
+
+          {selectedUnit ? (
+            // Weapon picker
+            <>
+              <Text style={usmStyles.unitNameHeader}>{selectedUnit.name}</Text>
+              <ScrollView style={usmStyles.weaponList}>
+                {selectedUnit.weapons.map((w) => (
+                  <TouchableOpacity
+                    key={w.id}
+                    style={usmStyles.weaponRow}
+                    onPress={() => handleWeaponPress(w)}
+                    activeOpacity={0.75}
+                  >
+                    <View style={usmStyles.weaponMain}>
+                      <Text style={usmStyles.weaponName}>{w.name}</Text>
+                      <View style={[usmStyles.typeBadge, w.type === 'melee' ? usmStyles.typeMelee : usmStyles.typeRanged]}>
+                        <Text style={usmStyles.typeText}>{w.type.toUpperCase()}</Text>
+                      </View>
+                    </View>
+                    <Text style={usmStyles.weaponStats}>
+                      A:{w.attacks}  S:{w.strength}  AP:{w.ap}  D:{w.damage}  Skill:{w.skill}+
+                      {w.range !== 'Melee' ? `  Range:${w.range}` : ''}
+                    </Text>
+                    {w.keywords.length > 0 && (
+                      <Text style={usmStyles.weaponKeywords}>{w.keywords.join(', ')}</Text>
+                    )}
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+              <TouchableOpacity style={usmStyles.backBtn} onPress={() => setSelectedUnit(null)}>
+                <Text style={usmStyles.backBtnText}>← BACK TO UNITS</Text>
+              </TouchableOpacity>
+            </>
+          ) : (
+            // Unit picker
+            <>
+              <TextInput
+                style={usmStyles.searchInput}
+                placeholder="Search units..."
+                placeholderTextColor={COLORS.textMuted}
+                value={query}
+                onChangeText={setQuery}
+                autoCapitalize="none"
+              />
+              <ScrollView horizontal showsHorizontalScrollIndicator={false} style={usmStyles.factionScroll}
+                contentContainerStyle={usmStyles.factionRow}>
+                <TouchableOpacity
+                  style={[usmStyles.factionChip, !faction && usmStyles.factionChipActive]}
+                  onPress={() => setFaction(undefined)}
+                >
+                  <Text style={[usmStyles.factionChipText, !faction && usmStyles.factionChipTextActive]}>ALL</Text>
+                </TouchableOpacity>
+                {ALL_FACTIONS.map((f) => (
+                  <TouchableOpacity
+                    key={f}
+                    style={[usmStyles.factionChip, faction === f && usmStyles.factionChipActive]}
+                    onPress={() => setFaction(f === faction ? undefined : f)}
+                  >
+                    <Text style={[usmStyles.factionChipText, faction === f && usmStyles.factionChipTextActive]}>
+                      {f.replace(/^[A-Z]+-/, '').toUpperCase()}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+
+              <FlatList
+                data={units}
+                keyExtractor={(u) => u.id}
+                style={usmStyles.unitList}
+                keyboardShouldPersistTaps="handled"
+                renderItem={({ item: unit }) => (
+                  <TouchableOpacity
+                    style={usmStyles.unitRow}
+                    onPress={() => handleUnitPress(unit)}
+                    activeOpacity={0.75}
+                  >
+                    <View style={usmStyles.unitRowMain}>
+                      <Text style={usmStyles.unitRowName}>{unit.name}</Text>
+                      <Text style={usmStyles.unitRowFaction}>{unit.faction}</Text>
+                    </View>
+                    <Text style={usmStyles.unitRowStats}>
+                      T:{unit.stats.toughness}  SV:{unit.stats.save}+
+                      {unit.stats.invuln ? `  INV:${unit.stats.invuln}+` : ''}
+                      {unit.stats.fnp ? `  FNP:${unit.stats.fnp}+` : ''}
+                      {'  W:'}{unit.stats.wounds}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+                ListEmptyComponent={
+                  <Text style={usmStyles.emptyText}>No units found</Text>
+                }
+              />
+            </>
+          )}
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
+const usmStyles = StyleSheet.create({
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    justifyContent: 'flex-end',
+  },
+  sheet: {
+    backgroundColor: COLORS.surface,
+    borderTopLeftRadius: RADIUS.lg,
+    borderTopRightRadius: RADIUS.lg,
+    borderTopWidth: 1,
+    borderColor: COLORS.border,
+    maxHeight: '85%',
+    paddingBottom: SPACING.xl,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: SPACING.md,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  headerTitle: {
+    color: COLORS.secondary,
+    fontSize: 14,
+    ...FONTS.heading,
+    letterSpacing: 2,
+  },
+  closeBtn: { padding: SPACING.xs },
+  closeBtnText: { color: COLORS.textSecondary, fontSize: 18, fontWeight: '700' },
+
+  searchInput: {
+    margin: SPACING.md,
+    marginBottom: SPACING.sm,
+    backgroundColor: COLORS.surfaceLight,
+    borderRadius: RADIUS.sm,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    color: COLORS.text,
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    fontSize: 15,
+  },
+  factionScroll: { maxHeight: 40 },
+  factionRow: {
+    flexDirection: 'row',
+    gap: SPACING.xs,
+    paddingHorizontal: SPACING.md,
+    paddingBottom: SPACING.sm,
+  },
+  factionChip: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 4,
+    borderRadius: RADIUS.full,
+    backgroundColor: COLORS.surfaceLight,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  factionChipActive: { backgroundColor: COLORS.primaryDark, borderColor: COLORS.primary },
+  factionChipText: { color: COLORS.textSecondary, fontSize: 10, fontWeight: '700', letterSpacing: 1 },
+  factionChipTextActive: { color: COLORS.text },
+
+  unitList: { flex: 1 },
+  unitRow: {
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  unitRowMain: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 2 },
+  unitRowName: { color: COLORS.text, fontSize: 14, fontWeight: '700', flex: 1 },
+  unitRowFaction: { color: COLORS.primary, fontSize: 10, fontWeight: '700', letterSpacing: 1 },
+  unitRowStats: { color: COLORS.textMuted, fontSize: 11 },
+  emptyText: { color: COLORS.textMuted, textAlign: 'center', padding: SPACING.xl },
+
+  unitNameHeader: {
+    color: COLORS.secondary,
+    fontSize: 16,
+    fontWeight: '700',
+    textAlign: 'center',
+    padding: SPACING.md,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  weaponList: { flex: 1 },
+  weaponRow: {
+    paddingHorizontal: SPACING.md,
+    paddingVertical: SPACING.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  weaponMain: { flexDirection: 'row', alignItems: 'center', gap: SPACING.sm, marginBottom: 3 },
+  weaponName: { color: COLORS.text, fontSize: 14, fontWeight: '700', flex: 1 },
+  typeBadge: {
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: RADIUS.full,
+  },
+  typeRanged: { backgroundColor: '#003366' },
+  typeMelee: { backgroundColor: '#330000' },
+  typeText: { color: COLORS.text, fontSize: 9, fontWeight: '800', letterSpacing: 1 },
+  weaponStats: { color: COLORS.textSecondary, fontSize: 11, marginBottom: 2 },
+  weaponKeywords: { color: COLORS.textMuted, fontSize: 10, fontStyle: 'italic' },
+  backBtn: {
+    margin: SPACING.md,
+    padding: SPACING.sm,
+    backgroundColor: COLORS.surfaceLight,
+    borderRadius: RADIUS.sm,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    alignItems: 'center',
+  },
+  backBtnText: { color: COLORS.textSecondary, fontSize: 12, fontWeight: '700', letterSpacing: 1 },
+});
+
 // ── Main screen ──────────────────────────────────────────────────────────────
 export default function WH40KScreen() {
   const [input, setInput] = useState<CombatInput>(DEFAULT_INPUT);
@@ -298,11 +571,53 @@ export default function WH40KScreen() {
     rolls: number[];
     threshold?: number;
   }>({ visible: false, title: '', rolls: [] });
+  const [unitModal, setUnitModal] = useState<{ visible: boolean; mode: SelectMode }>({
+    visible: false,
+    mode: 'attacker',
+  });
   const [history, setHistory] = useStorage<HistoryEntry[]>('roll_history', []);
 
   const patch = useCallback(<K extends keyof CombatInput>(key: K, value: CombatInput[K]) => {
     setInput((prev) => ({ ...prev, [key]: value }));
   }, []);
+
+  const handleUnitSelected = useCallback((unit: UnitProfile, weapon?: WeaponProfile) => {
+    if (unitModal.mode === 'attacker' && weapon) {
+      const torrent = weapon.keywords.some((k) => k.toLowerCase().includes('torrent'));
+      const lethalHits = weapon.keywords.some((k) => k.toLowerCase().includes('lethal'));
+      const devastatingWounds = weapon.keywords.some((k) => k.toLowerCase().includes('devastating'));
+      const twinLinked = weapon.keywords.some((k) => k.toLowerCase().includes('twin'));
+      const sustainedMatch = weapon.keywords.join(' ').toLowerCase().match(/sustained hits (\d)/);
+      const sustainedHits = sustainedMatch ? parseInt(sustainedMatch[1], 10) : 0;
+      const rapidFireMatch = weapon.keywords.join(' ').toLowerCase().match(/rapid fire (\d)/);
+      const attacksRaw = rapidFireMatch
+        ? `${weapon.attacks}+${rapidFireMatch[1]}`
+        : weapon.attacks;
+      setInput((prev) => ({
+        ...prev,
+        attackerName: `${unit.name} – ${weapon.name}`,
+        attacksRaw,
+        skill: weapon.skill as 2 | 3 | 4 | 5 | 6,
+        strength: weapon.strength,
+        ap: weapon.ap,
+        damageRaw: weapon.damage,
+        torrent,
+        lethalHits,
+        devastatingWounds,
+        twinLinked,
+        sustainedHits,
+      }));
+    } else if (unitModal.mode === 'target') {
+      setInput((prev) => ({
+        ...prev,
+        targetName: unit.name,
+        toughness: unit.stats.toughness,
+        save: unit.stats.save,
+        invuln: unit.stats.invuln ?? 7,
+        fnp: unit.stats.fnp ?? 7,
+      }));
+    }
+  }, [unitModal.mode]);
 
   const handleSimulate = () => {
     if (Platform.OS !== 'web') Vibration.vibrate(60);
@@ -330,7 +645,16 @@ export default function WH40KScreen() {
 
         {/* ── Attacker ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>⚔ ATTACKER</Text>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>⚔ ATTACKER</Text>
+            <TouchableOpacity
+              style={styles.selectUnitBtn}
+              onPress={() => setUnitModal({ visible: true, mode: 'attacker' })}
+              activeOpacity={0.75}
+            >
+              <Text style={styles.selectUnitBtnText}>SELECT UNIT</Text>
+            </TouchableOpacity>
+          </View>
 
           <Text style={styles.fieldLabel}>NAME</Text>
           <TextInput
@@ -438,7 +762,16 @@ export default function WH40KScreen() {
 
         {/* ── Target ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>🛡 TARGET</Text>
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>🛡 TARGET</Text>
+            <TouchableOpacity
+              style={styles.selectUnitBtn}
+              onPress={() => setUnitModal({ visible: true, mode: 'target' })}
+              activeOpacity={0.75}
+            >
+              <Text style={styles.selectUnitBtnText}>SELECT UNIT</Text>
+            </TouchableOpacity>
+          </View>
 
           <Text style={styles.fieldLabel}>NAME</Text>
           <TextInput
@@ -528,6 +861,13 @@ export default function WH40KScreen() {
         threshold={modalData.threshold}
         onClose={() => setModalData((m) => ({ ...m, visible: false }))}
       />
+
+      <UnitSelectorModal
+        visible={unitModal.visible}
+        mode={unitModal.mode}
+        onSelectUnit={handleUnitSelected}
+        onClose={() => setUnitModal((m) => ({ ...m, visible: false }))}
+      />
     </SafeAreaView>
   );
 }
@@ -575,13 +915,27 @@ const styles = StyleSheet.create({
     padding: SPACING.md,
     marginBottom: SPACING.md,
   },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: SPACING.md,
+  },
   sectionTitle: {
     color: COLORS.secondary,
     fontSize: 13,
     ...FONTS.heading,
     letterSpacing: 2,
-    marginBottom: SPACING.md,
   },
+  selectUnitBtn: {
+    paddingHorizontal: SPACING.sm,
+    paddingVertical: 4,
+    backgroundColor: COLORS.primaryDark,
+    borderRadius: RADIUS.sm,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+  },
+  selectUnitBtnText: { color: COLORS.text, fontSize: 10, fontWeight: '800', letterSpacing: 1.5 },
   sectionLabel: {
     color: COLORS.textSecondary,
     fontSize: 10,
