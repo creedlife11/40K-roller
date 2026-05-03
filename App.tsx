@@ -17,7 +17,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={Platform.OS === 'web' ? { flex: 1, height: '100vh' as any } : { flex: 1 }}>
       <SafeAreaProvider>
         <StatusBar style="light" backgroundColor={COLORS.bg} />
         {/* On web, centre the app in a phone-width column */}
