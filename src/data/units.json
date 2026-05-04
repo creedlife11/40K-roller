@@ -71,6 +71,121 @@
       ]
     },
     {
+      "id": "ba-sanguinary-guard",
+      "name": "Sanguinary Guard",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Sanguinary Guard", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 2, "wounds": 2, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "ba-angelus-boltgun", "name": "Angelus Boltgun", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 2, "strength": 4, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "ba-encarmine-sword", "name": "Encarmine Sword", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 5, "ap": -2, "damage": "2", "keywords": [] },
+        { "id": "ba-encarmine-axe", "name": "Encarmine Axe", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 7, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ba-death-company",
+      "name": "Death Company Marines",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Death Company", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "ba-bolt-pistol", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "ba-inferno-pistol", "name": "Inferno Pistol", "type": "ranged", "range": "6\"", "attacks": "1", "skill": 3, "strength": 8, "ap": -4, "damage": "d3", "keywords": ["PISTOL", "MELTA 2"] },
+        { "id": "ba-chainsword-dc", "name": "Astartes Chainsword", "type": "melee", "range": "Melee", "attacks": "5", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": [] },
+        { "id": "ba-power-fist-dc", "name": "Power Fist", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 8, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ba-commander-dante",
+      "name": "Commander Dante",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Chapter Master", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 2, "wounds": 6, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "ba-perdition-pistol", "name": "Perdition Pistol", "type": "ranged", "range": "9\"", "attacks": "1", "skill": 2, "strength": 8, "ap": -4, "damage": "3", "keywords": ["PISTOL", "MELTA 3"] },
+        { "id": "ba-axe-mortalis", "name": "Axe Mortalis", "type": "melee", "range": "Melee", "attacks": "7", "skill": 2, "strength": 6, "ap": -3, "damage": "2", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
+      "id": "ba-sanguinor",
+      "name": "The Sanguinor",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Unique", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 2, "wounds": 6, "leadership": 6, "oc": 1, "invuln": 3 },
+      "weapons": [
+        { "id": "ba-encarmine-greatblade", "name": "Encarmine Greatblade", "type": "melee", "range": "Melee", "attacks": "7", "skill": 2, "strength": 6, "ap": -3, "damage": "3", "keywords": ["DEVASTATING WOUNDS"] }
+      ]
+    },
+    {
+      "id": "ba-mephiston",
+      "name": "Mephiston, Lord of Death",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Character", "Psyker", "Unique", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 2, "wounds": 6, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "ba-plasma-pistol", "name": "Plasma Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 7, "ap": -2, "damage": "2", "keywords": ["PISTOL"] },
+        { "id": "ba-force-sword", "name": "Force Sword", "type": "melee", "range": "Melee", "attacks": "6", "skill": 2, "strength": 8, "ap": -3, "damage": "3", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ba-sanguinary-priest",
+      "name": "Sanguinary Priest",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Character", "Sanguinary Priest", "Adeptus Astartes"],
+      "stats": { "move": 6, "toughness": 4, "save": 3, "wounds": 4, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "ba-sp-bolt-pistol", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "ba-chainsword-sp", "name": "Chainsword", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 4, "ap": -1, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "ba-furioso-dreadnought",
+      "name": "Furioso Dreadnought",
+      "faction": "Blood Angels",
+      "keywords": ["Walker", "Vehicle", "Dreadnought", "Adeptus Astartes"],
+      "stats": { "move": 8, "toughness": 10, "save": 2, "wounds": 8, "leadership": 6, "oc": 4 },
+      "weapons": [
+        { "id": "ba-frag-cannon", "name": "Frag Cannon", "type": "ranged", "range": "12\"", "attacks": "2d6", "skill": 3, "strength": 6, "ap": 0, "damage": "1", "keywords": ["BLAST"] },
+        { "id": "ba-blood-fists", "name": "Blood Fists (pair)", "type": "melee", "range": "Melee", "attacks": "5", "skill": 3, "strength": 14, "ap": -3, "damage": "d6+1", "keywords": ["TWIN-LINKED"] },
+        { "id": "ba-blood-talons-furioso", "name": "Blood Talons (pair)", "type": "melee", "range": "Melee", "attacks": "6", "skill": 3, "strength": 12, "ap": -3, "damage": "2", "keywords": ["TWIN-LINKED", "SUSTAINED HITS 1"] }
+      ]
+    },
+    {
+      "id": "ba-death-company-dread",
+      "name": "Death Company Dreadnought",
+      "faction": "Blood Angels",
+      "keywords": ["Walker", "Vehicle", "Dreadnought", "Death Company", "Adeptus Astartes"],
+      "stats": { "move": 8, "toughness": 10, "save": 2, "wounds": 8, "leadership": 6, "oc": 4 },
+      "weapons": [
+        { "id": "ba-dc-meltagun", "name": "Meltagun", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 9, "ap": -4, "damage": "d6", "keywords": ["MELTA 2"] },
+        { "id": "ba-dc-storm-bolter", "name": "Storm Bolter", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["RAPID FIRE 2"] },
+        { "id": "ba-blood-talons-dc", "name": "Blood Talons (pair)", "type": "melee", "range": "Melee", "attacks": "8", "skill": 3, "strength": 12, "ap": -3, "damage": "2", "keywords": ["TWIN-LINKED", "SUSTAINED HITS 1"] },
+        { "id": "ba-furioso-fists", "name": "Furioso Fists (pair)", "type": "melee", "range": "Melee", "attacks": "5", "skill": 3, "strength": 14, "ap": -3, "damage": "d6+1", "keywords": ["TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "ba-astorath",
+      "name": "Astorath the Grim",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Chaplain", "Unique", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 3, "wounds": 5, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "ba-asto-inferno-pistol", "name": "Inferno Pistol", "type": "ranged", "range": "6\"", "attacks": "1", "skill": 2, "strength": 8, "ap": -4, "damage": "d3", "keywords": ["PISTOL", "MELTA 2"] },
+        { "id": "ba-executioners-axe", "name": "Executioner's Axe", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 7, "ap": -2, "damage": "2", "keywords": ["DEVASTATING WOUNDS"] }
+      ]
+    },
+    {
+      "id": "ba-lemartes",
+      "name": "Lemartes, Guardian of the Lost",
+      "faction": "Blood Angels",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Chaplain", "Unique", "Adeptus Astartes"],
+      "stats": { "move": 12, "toughness": 4, "save": 3, "wounds": 4, "leadership": 6, "oc": 1, "invuln": 5 },
+      "weapons": [
+        { "id": "ba-lemartes-bolt-pistol", "name": "Bolt Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "ba-blood-crozius", "name": "Blood Crozius", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 6, "ap": -1, "damage": "2", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
       "id": "csm-chaos-space-marines",
       "name": "Chaos Space Marines",
       "faction": "Chaos Space Marines",
@@ -238,14 +353,143 @@
       ]
     },
     {
+      "id": "eld-storm-guardians",
+      "name": "Storm Guardians",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Guardian", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 5, "wounds": 1, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "eld-shuriken-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-aeldari-ccw", "name": "Aeldari Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-rangers",
+      "name": "Rangers",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Ranger", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 5, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-ranger-long-rifle", "name": "Ranger Long Rifle", "type": "ranged", "range": "36\"", "attacks": "1", "skill": 3, "strength": 4, "ap": -1, "damage": "2", "keywords": ["HEAVY", "LETHAL HITS"] },
+        { "id": "eld-ranger-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-ranger-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-windriders",
+      "name": "Windriders",
+      "faction": "Aeldari",
+      "keywords": ["Mounted", "Jetbike", "Windrider", "Aeldari"],
+      "stats": { "move": 16, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "eld-twin-catapult", "name": "Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-shuriken-cannon", "name": "Shuriken Cannon", "type": "ranged", "range": "24\"", "attacks": "3", "skill": 3, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-scatter-laser", "name": "Scatter Laser", "type": "ranged", "range": "36\"", "attacks": "6", "skill": 3, "strength": 6, "ap": 0, "damage": "1", "keywords": ["SUSTAINED HITS 1"] },
+        { "id": "eld-jetbike-ccw", "name": "Jetbike Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
       "id": "eld-dire-avengers",
       "name": "Dire Avengers",
       "faction": "Aeldari",
-      "keywords": ["Infantry", "Aspect Warrior", "Aeldari"],
+      "keywords": ["Infantry", "Aspect Warrior", "Dire Avengers", "Aeldari"],
       "stats": { "move": 7, "toughness": 3, "save": 4, "wounds": 1, "leadership": 6, "oc": 1 },
       "weapons": [
         { "id": "avenger-catapult", "name": "Avenger Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
         { "id": "diresword", "name": "Diresword", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 4, "ap": -2, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-striking-scorpions",
+      "name": "Striking Scorpions",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Striking Scorpions", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 3, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-scorpions-claw-ranged", "name": "Scorpion's Claw (shooting)", "type": "ranged", "range": "12\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "eld-scorpion-chainsword", "name": "Scorpion Chainsword", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 4, "ap": -1, "damage": "1", "keywords": [] },
+        { "id": "eld-scorpions-claw-melee", "name": "Scorpion's Claw (melee, Exarch)", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 8, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-howling-banshees",
+      "name": "Howling Banshees",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Howling Banshees", "Aeldari"],
+      "stats": { "move": 8, "toughness": 3, "save": 4, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-banshee-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-banshee-blade", "name": "Banshee Blade", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 4, "ap": -2, "damage": "1", "keywords": [] },
+        { "id": "eld-executioner", "name": "Executioner (Exarch)", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 5, "ap": -3, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-fire-dragons",
+      "name": "Fire Dragons",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Fire Dragons", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 5, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-fusion-gun", "name": "Fusion Gun", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 9, "ap": -4, "damage": "d6", "keywords": ["MELTA 2"] },
+        { "id": "eld-dragon-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-dark-reapers",
+      "name": "Dark Reapers",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Dark Reapers", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 3, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-reaper-starswarm", "name": "Reaper Launcher (Starswarm)", "type": "ranged", "range": "48\"", "attacks": "d6", "skill": 3, "strength": 5, "ap": 0, "damage": "1", "keywords": ["BLAST"] },
+        { "id": "eld-reaper-starshot", "name": "Reaper Launcher (Starshot)", "type": "ranged", "range": "48\"", "attacks": "2", "skill": 3, "strength": 8, "ap": -3, "damage": "d3+3", "keywords": [] },
+        { "id": "eld-reapers-blade", "name": "Reaper's Blade", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-swooping-hawks",
+      "name": "Swooping Hawks",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Jump Pack", "Aspect Warrior", "Swooping Hawks", "Aeldari"],
+      "stats": { "move": 14, "toughness": 3, "save": 5, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-lasblaster", "name": "Lasblaster", "type": "ranged", "range": "24\"", "attacks": "4", "skill": 3, "strength": 3, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "SUSTAINED HITS 1"] },
+        { "id": "eld-hawk-talon", "name": "Swooping Hawk Talon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-warp-spiders",
+      "name": "Warp Spiders",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Aspect Warrior", "Warp Spiders", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 3, "wounds": 1, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-death-spinner", "name": "Death Spinner", "type": "ranged", "range": "12\"", "attacks": "2", "skill": 3, "strength": 6, "ap": -2, "damage": "1", "keywords": ["ASSAULT", "DEVASTATING WOUNDS"] },
+        { "id": "eld-spider-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "2", "skill": 3, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-shining-spears",
+      "name": "Shining Spears",
+      "faction": "Aeldari",
+      "keywords": ["Mounted", "Jetbike", "Aspect Warrior", "Shining Spears", "Aeldari"],
+      "stats": { "move": 14, "toughness": 4, "save": 3, "wounds": 2, "leadership": 6, "oc": 2, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-spear-catapult", "name": "Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-laser-lance-ranged", "name": "Laser Lance (shooting)", "type": "ranged", "range": "12\"", "attacks": "2", "skill": 3, "strength": 6, "ap": -2, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-laser-lance-melee", "name": "Laser Lance (melee)", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 7, "ap": -3, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-shadow-spectres",
+      "name": "Shadow Spectres",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Jump Pack", "Aspect Warrior", "Shadow Spectres", "Aeldari"],
+      "stats": { "move": 14, "toughness": 3, "save": 3, "wounds": 1, "leadership": 6, "oc": 1, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-prism-dispersed", "name": "Prism Rifle (dispersed)", "type": "ranged", "range": "30\"", "attacks": "2", "skill": 3, "strength": 5, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "HEAVY"] },
+        { "id": "eld-prism-focused", "name": "Prism Rifle (focused)", "type": "ranged", "range": "30\"", "attacks": "1", "skill": 3, "strength": 8, "ap": -3, "damage": "2", "keywords": ["ASSAULT", "HEAVY"] },
+        { "id": "eld-spectre-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "1", "skill": 4, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
       ]
     },
     {
@@ -257,6 +501,317 @@
       "weapons": [
         { "id": "d-scythe", "name": "D-Scythe", "type": "ranged", "range": "8\"", "attacks": "2", "skill": 4, "strength": 10, "ap": -4, "damage": "d3", "keywords": ["TORRENT"] },
         { "id": "wraithblade", "name": "Wraithblade", "type": "melee", "range": "Melee", "attacks": "4", "skill": 4, "strength": 6, "ap": -3, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-wraithblades",
+      "name": "Wraithblades",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Wraith Construct", "Aeldari"],
+      "stats": { "move": 6, "toughness": 7, "save": 3, "wounds": 3, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-ghostaxe", "name": "Ghostaxe & Forceshield", "type": "melee", "range": "Melee", "attacks": "3", "skill": 4, "strength": 8, "ap": -2, "damage": "3", "keywords": [] },
+        { "id": "eld-ghostsword", "name": "Ghostsword (pair)", "type": "melee", "range": "Melee", "attacks": "4", "skill": 4, "strength": 6, "ap": -3, "damage": "2", "keywords": ["TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "eld-wraithlord",
+      "name": "Wraithlord",
+      "faction": "Aeldari",
+      "keywords": ["Monster", "Wraith Construct", "Aeldari"],
+      "stats": { "move": 8, "toughness": 10, "save": 3, "wounds": 10, "leadership": 6, "oc": 3 },
+      "weapons": [
+        { "id": "eld-wl-twin-catapult", "name": "Shuriken Catapults (×2)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "TWIN-LINKED"] },
+        { "id": "eld-wl-bright-lance", "name": "Bright Lance", "type": "ranged", "range": "36\"", "attacks": "2", "skill": 4, "strength": 12, "ap": -3, "damage": "d6+2", "keywords": [] },
+        { "id": "eld-wl-flamer", "name": "Flamer", "type": "ranged", "range": "12\"", "attacks": "d6", "skill": 4, "strength": 4, "ap": 0, "damage": "1", "keywords": ["TORRENT"] },
+        { "id": "eld-wl-fists", "name": "Wraithlord's Fists", "type": "melee", "range": "Melee", "attacks": "4", "skill": 4, "strength": 14, "ap": -3, "damage": "d6+1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-wraithknight",
+      "name": "Wraithknight",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Titanic", "Wraith Construct", "Aeldari"],
+      "stats": { "move": 12, "toughness": 12, "save": 3, "wounds": 16, "leadership": 6, "oc": 6, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-suncannon", "name": "Suncannon", "type": "ranged", "range": "48\"", "attacks": "3d6", "skill": 3, "strength": 9, "ap": -3, "damage": "3", "keywords": ["BLAST"] },
+        { "id": "eld-heavy-wraithcannons", "name": "Heavy Wraithcannons (×2)", "type": "ranged", "range": "24\"", "attacks": "2", "skill": 3, "strength": 14, "ap": -4, "damage": "d6+2", "keywords": ["TWIN-LINKED"] },
+        { "id": "eld-titanic-fists", "name": "Titanic Wraithbone Fists", "type": "melee", "range": "Melee", "attacks": "4", "skill": 3, "strength": 16, "ap": -4, "damage": "d6+4", "keywords": [] },
+        { "id": "eld-ghostglaive", "name": "Titanic Ghost Glaive", "type": "melee", "range": "Melee", "attacks": "5", "skill": 3, "strength": 20, "ap": -4, "damage": "d6+6", "keywords": ["DEVASTATING WOUNDS"] }
+      ]
+    },
+    {
+      "id": "eld-farseer",
+      "name": "Farseer",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Psyker", "Farseer", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 4, "wounds": 4, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-farseer-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-witchblade", "name": "Witchblade", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 6, "ap": -1, "damage": "2", "keywords": ["PSYCHIC"] }
+      ]
+    },
+    {
+      "id": "eld-farseer-skyrunner",
+      "name": "Farseer Skyrunner",
+      "faction": "Aeldari",
+      "keywords": ["Mounted", "Jetbike", "Character", "Psyker", "Farseer", "Aeldari"],
+      "stats": { "move": 14, "toughness": 4, "save": 4, "wounds": 5, "leadership": 6, "oc": 2, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-sky-catapult", "name": "Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-sky-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-sky-witchblade", "name": "Witchblade", "type": "melee", "range": "Melee", "attacks": "4", "skill": 2, "strength": 6, "ap": -1, "damage": "2", "keywords": ["PSYCHIC"] }
+      ]
+    },
+    {
+      "id": "eld-warlock",
+      "name": "Warlock",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Psyker", "Warlock", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 4, "wounds": 2, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-warlock-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-warlock-witchblade", "name": "Witchblade", "type": "melee", "range": "Melee", "attacks": "3", "skill": 3, "strength": 5, "ap": -1, "damage": "1", "keywords": ["PSYCHIC"] }
+      ]
+    },
+    {
+      "id": "eld-autarch",
+      "name": "Autarch",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Autarch", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 3, "wounds": 5, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-autarch-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-power-sword", "name": "Power Sword", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 5, "ap": -2, "damage": "1", "keywords": [] },
+        { "id": "eld-star-glaive", "name": "Star Glaive", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 6, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-autarch-skyleap",
+      "name": "Autarch with Skyleap",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Autarch", "Aeldari"],
+      "stats": { "move": 12, "toughness": 3, "save": 3, "wounds": 5, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-sky-autarch-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-sky-star-glaive", "name": "Star Glaive", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 6, "ap": -2, "damage": "2", "keywords": [] },
+        { "id": "eld-sky-power-sword", "name": "Power Sword", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 5, "ap": -2, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-autarch-skyrunner",
+      "name": "Autarch Skyrunner",
+      "faction": "Aeldari",
+      "keywords": ["Mounted", "Jetbike", "Character", "Autarch", "Aeldari"],
+      "stats": { "move": 14, "toughness": 4, "save": 3, "wounds": 6, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "eld-skyrun-twin-catapult", "name": "Shuriken Catapult (×2)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "TWIN-LINKED"] },
+        { "id": "eld-skyrun-power-sword", "name": "Power Sword", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 5, "ap": -2, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-spiritseer",
+      "name": "Spiritseer",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Psyker", "Spiritseer", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 5, "wounds": 4, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-spiritseer-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-spiritseer-staff", "name": "Spiritseer's Stave", "type": "melee", "range": "Melee", "attacks": "3", "skill": 2, "strength": 5, "ap": -1, "damage": "2", "keywords": ["PSYCHIC"] }
+      ]
+    },
+    {
+      "id": "eld-avatar-of-khaine",
+      "name": "Avatar of Khaine",
+      "faction": "Aeldari",
+      "keywords": ["Monster", "Character", "Daemon", "Avatar of Khaine", "Aeldari"],
+      "stats": { "move": 10, "toughness": 9, "save": 3, "wounds": 9, "leadership": 6, "oc": 4, "invuln": 4, "fnp": 6 },
+      "weapons": [
+        { "id": "eld-wailing-doom-ranged", "name": "The Wailing Doom (ranged)", "type": "ranged", "range": "12\"", "attacks": "3", "skill": 2, "strength": 10, "ap": -3, "damage": "d6", "keywords": ["ASSAULT", "DEVASTATING WOUNDS"] },
+        { "id": "eld-wailing-doom-melee", "name": "The Wailing Doom (melee)", "type": "melee", "range": "Melee", "attacks": "6", "skill": 2, "strength": 12, "ap": -4, "damage": "d6+2", "keywords": ["DEVASTATING WOUNDS"] },
+        { "id": "eld-talons-of-khaine", "name": "Talons of Khaine", "type": "melee", "range": "Melee", "attacks": "3", "skill": 2, "strength": 8, "ap": -2, "damage": "2", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
+      "id": "eld-wave-serpent",
+      "name": "Wave Serpent",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Transport", "Wave Serpent", "Aeldari"],
+      "stats": { "move": 14, "toughness": 9, "save": 3, "wounds": 13, "leadership": 6, "oc": 2, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-twin-shuriken-cannon", "name": "Twin Shuriken Cannon", "type": "ranged", "range": "24\"", "attacks": "3", "skill": 3, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT", "TWIN-LINKED"] },
+        { "id": "eld-ws-catapult", "name": "Shuriken Catapults (hull, ×2)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "eld-fire-prism",
+      "name": "Fire Prism",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Fire Prism", "Aeldari"],
+      "stats": { "move": 16, "toughness": 10, "save": 3, "wounds": 11, "leadership": 6, "oc": 3 },
+      "weapons": [
+        { "id": "eld-prism-cannon-dispersed", "name": "Prism Cannon (dispersed)", "type": "ranged", "range": "60\"", "attacks": "2d3", "skill": 3, "strength": 9, "ap": -2, "damage": "3", "keywords": ["BLAST"] },
+        { "id": "eld-prism-cannon-focused", "name": "Prism Cannon (focused)", "type": "ranged", "range": "60\"", "attacks": "1", "skill": 3, "strength": 12, "ap": -4, "damage": "d6+6", "keywords": [] },
+        { "id": "eld-fp-catapult", "name": "Shuriken Catapult (hull)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] }
+      ]
+    },
+    {
+      "id": "eld-falcon",
+      "name": "Falcon",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Transport", "Falcon", "Aeldari"],
+      "stats": { "move": 16, "toughness": 9, "save": 3, "wounds": 11, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "eld-pulse-laser", "name": "Pulse Laser", "type": "ranged", "range": "48\"", "attacks": "2", "skill": 3, "strength": 14, "ap": -4, "damage": "d6", "keywords": [] },
+        { "id": "eld-falcon-cannon", "name": "Shuriken Cannon", "type": "ranged", "range": "24\"", "attacks": "3", "skill": 3, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-falcon-catapult", "name": "Shuriken Catapult (hull)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] }
+      ]
+    },
+    {
+      "id": "eld-night-spinner",
+      "name": "Night Spinner",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Night Spinner", "Aeldari"],
+      "stats": { "move": 16, "toughness": 10, "save": 3, "wounds": 11, "leadership": 6, "oc": 3 },
+      "weapons": [
+        { "id": "eld-doomweaver-dispersed", "name": "Doomweaver (dispersed)", "type": "ranged", "range": "48\"", "attacks": "d6", "skill": 3, "strength": 7, "ap": 0, "damage": "2", "keywords": ["BLAST", "INDIRECT FIRE"] },
+        { "id": "eld-doomweaver-focused", "name": "Doomweaver (focused)", "type": "ranged", "range": "48\"", "attacks": "d3", "skill": 3, "strength": 9, "ap": -2, "damage": "4", "keywords": ["INDIRECT FIRE"] },
+        { "id": "eld-ns-catapult", "name": "Shuriken Catapult (hull)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] }
+      ]
+    },
+    {
+      "id": "eld-war-walker",
+      "name": "War Walker",
+      "faction": "Aeldari",
+      "keywords": ["Walker", "Vehicle", "War Walker", "Aeldari"],
+      "stats": { "move": 10, "toughness": 7, "save": 4, "wounds": 6, "leadership": 6, "oc": 3, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-ww-twin-cannon", "name": "Shuriken Cannons (×2)", "type": "ranged", "range": "24\"", "attacks": "3", "skill": 3, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT", "TWIN-LINKED"] },
+        { "id": "eld-ww-scatter-laser", "name": "Scatter Laser", "type": "ranged", "range": "36\"", "attacks": "6", "skill": 3, "strength": 6, "ap": 0, "damage": "1", "keywords": ["SUSTAINED HITS 1"] },
+        { "id": "eld-ww-bright-lance", "name": "Bright Lance", "type": "ranged", "range": "36\"", "attacks": "2", "skill": 3, "strength": 12, "ap": -3, "damage": "d6+2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-vyper",
+      "name": "Vyper",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Jetbike", "Vyper", "Aeldari"],
+      "stats": { "move": 16, "toughness": 7, "save": 4, "wounds": 4, "leadership": 6, "oc": 2, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-vyper-cannon", "name": "Shuriken Cannon", "type": "ranged", "range": "24\"", "attacks": "3", "skill": 3, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-vyper-bright-lance", "name": "Bright Lance", "type": "ranged", "range": "36\"", "attacks": "2", "skill": 3, "strength": 12, "ap": -3, "damage": "d6+2", "keywords": [] },
+        { "id": "eld-vyper-catapult", "name": "Shuriken Catapult (hull)", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 3, "strength": 4, "ap": 0, "damage": "1", "keywords": ["ASSAULT"] }
+      ]
+    },
+    {
+      "id": "eld-hemlock-wraithfighter",
+      "name": "Hemlock Wraithfighter",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Aircraft", "Wraith Construct", "Aeldari"],
+      "stats": { "move": 20, "toughness": 8, "save": 3, "wounds": 10, "leadership": 6, "oc": 2, "invuln": 5 },
+      "weapons": [
+        { "id": "eld-twin-d-scythes", "name": "Heavy D-Scythes (×2)", "type": "ranged", "range": "8\"", "attacks": "2", "skill": 3, "strength": 10, "ap": -4, "damage": "d3", "keywords": ["TORRENT", "TWIN-LINKED"] }
+      ]
+    },
+    {
+      "id": "eld-crimson-hunter",
+      "name": "Crimson Hunter Exarch",
+      "faction": "Aeldari",
+      "keywords": ["Vehicle", "Aircraft", "Aspect Warrior", "Aeldari"],
+      "stats": { "move": 20, "toughness": 8, "save": 3, "wounds": 8, "leadership": 6, "oc": 2 },
+      "weapons": [
+        { "id": "eld-ch-bright-lances", "name": "Bright Lances (×2)", "type": "ranged", "range": "36\"", "attacks": "2", "skill": 2, "strength": 12, "ap": -3, "damage": "d6+2", "keywords": ["TWIN-LINKED"] },
+        { "id": "eld-ch-pulse-laser", "name": "Pulse Laser", "type": "ranged", "range": "48\"", "attacks": "2", "skill": 2, "strength": 14, "ap": -4, "damage": "d6", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-eldrad-ulthran",
+      "name": "Eldrad Ulthran",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Psyker", "Farseer", "Unique", "Aeldari"],
+      "stats": { "move": 6, "toughness": 3, "save": 4, "wounds": 4, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-eldrad-pistol", "name": "Shuriken Pistol", "type": "ranged", "range": "12\"", "attacks": "1", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL", "ASSAULT"] },
+        { "id": "eld-staff-ulthamar", "name": "Staff of Ulthamar", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 7, "ap": -2, "damage": "2", "keywords": ["PSYCHIC"] }
+      ]
+    },
+    {
+      "id": "eld-illic-nightspear",
+      "name": "Illic Nightspear",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Ranger", "Unique", "Aeldari"],
+      "stats": { "move": 7, "toughness": 3, "save": 5, "wounds": 4, "leadership": 6, "oc": 1 },
+      "weapons": [
+        { "id": "eld-void-rifle", "name": "Void Rifle", "type": "ranged", "range": "36\"", "attacks": "1", "skill": 2, "strength": 4, "ap": -2, "damage": "3", "keywords": ["HEAVY", "LETHAL HITS", "PRECISION"] },
+        { "id": "eld-illic-long-rifle", "name": "Ranger Long Rifle", "type": "ranged", "range": "36\"", "attacks": "1", "skill": 2, "strength": 4, "ap": -1, "damage": "2", "keywords": ["HEAVY", "LETHAL HITS"] },
+        { "id": "eld-illic-ccw", "name": "Close Combat Weapon", "type": "melee", "range": "Melee", "attacks": "3", "skill": 2, "strength": 3, "ap": 0, "damage": "1", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-asurmen",
+      "name": "Asurmen",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Phoenix Lord", "Dire Avengers", "Unique", "Aeldari"],
+      "stats": { "move": 7, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-twin-avenger-catapult", "name": "Twin Avenger Shuriken Catapult", "type": "ranged", "range": "18\"", "attacks": "3", "skill": 2, "strength": 4, "ap": -2, "damage": "1", "keywords": ["ASSAULT"] },
+        { "id": "eld-sword-of-asur", "name": "Sword of Asur", "type": "melee", "range": "Melee", "attacks": "6", "skill": 2, "strength": 5, "ap": -3, "damage": "1", "keywords": ["LETHAL HITS", "DEVASTATING WOUNDS"] }
+      ]
+    },
+    {
+      "id": "eld-jain-zar",
+      "name": "Jain Zar",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Phoenix Lord", "Howling Banshees", "Unique", "Aeldari"],
+      "stats": { "move": 8, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-silent-death", "name": "Silent Death", "type": "ranged", "range": "12\"", "attacks": "4", "skill": 2, "strength": 5, "ap": -2, "damage": "1", "keywords": ["ASSAULT", "LETHAL HITS"] },
+        { "id": "eld-storm-of-silence", "name": "The Storm of Silence", "type": "melee", "range": "Melee", "attacks": "8", "skill": 2, "strength": 5, "ap": -3, "damage": "2", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
+      "id": "eld-karandras",
+      "name": "Karandras",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Phoenix Lord", "Striking Scorpions", "Unique", "Aeldari"],
+      "stats": { "move": 7, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-karandras-claw-ranged", "name": "Scorpion's Claw (shooting)", "type": "ranged", "range": "12\"", "attacks": "4", "skill": 2, "strength": 4, "ap": 0, "damage": "1", "keywords": ["PISTOL"] },
+        { "id": "eld-karandras-chainsword", "name": "Scorpion Chainsword", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 4, "ap": -1, "damage": "1", "keywords": [] },
+        { "id": "eld-karandras-claw-melee", "name": "Scorpion's Claw (melee)", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 8, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-fuegan",
+      "name": "Fuegan",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Phoenix Lord", "Fire Dragons", "Unique", "Aeldari"],
+      "stats": { "move": 7, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-fire-pike", "name": "Fire Pike", "type": "ranged", "range": "18\"", "attacks": "2", "skill": 2, "strength": 9, "ap": -4, "damage": "d6+1", "keywords": ["MELTA 2"] },
+        { "id": "eld-fire-axe", "name": "The Fire Axe", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 8, "ap": -3, "damage": "3", "keywords": ["LETHAL HITS"] }
+      ]
+    },
+    {
+      "id": "eld-maugan-ra",
+      "name": "Maugan Ra",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Character", "Phoenix Lord", "Dark Reapers", "Unique", "Aeldari"],
+      "stats": { "move": 7, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-maugetar-ranged", "name": "The Maugetar (shooting)", "type": "ranged", "range": "36\"", "attacks": "4", "skill": 2, "strength": 6, "ap": -1, "damage": "1", "keywords": ["ASSAULT", "LETHAL HITS"] },
+        { "id": "eld-maugetar-melee", "name": "The Maugetar (melee)", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 6, "ap": -2, "damage": "2", "keywords": [] }
+      ]
+    },
+    {
+      "id": "eld-baharroth",
+      "name": "Baharroth",
+      "faction": "Aeldari",
+      "keywords": ["Infantry", "Jump Pack", "Character", "Phoenix Lord", "Swooping Hawks", "Unique", "Aeldari"],
+      "stats": { "move": 14, "toughness": 4, "save": 2, "wounds": 5, "leadership": 6, "oc": 1, "invuln": 4 },
+      "weapons": [
+        { "id": "eld-hawks-talon", "name": "Hawk's Talon", "type": "ranged", "range": "24\"", "attacks": "6", "skill": 2, "strength": 3, "ap": 0, "damage": "1", "keywords": ["ASSAULT", "SUSTAINED HITS 2"] },
+        { "id": "eld-baharroth-talon", "name": "Swooping Hawk Talon", "type": "melee", "range": "Melee", "attacks": "5", "skill": 2, "strength": 4, "ap": -2, "damage": "2", "keywords": [] }
       ]
     },
     {
