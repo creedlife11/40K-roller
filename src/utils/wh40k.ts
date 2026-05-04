@@ -199,7 +199,7 @@ export function simulateCombat(input: CombatInput): CombatResult {
   return {
     attacks,
     hits: totalHits,
-    wounds: wounds + autoWoundsFromLethal,
+    wounds: wounds,
     savesFailed,
     mortals: actualMortals,
     damageDealt: totalDamage,

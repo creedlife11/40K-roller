@@ -5,7 +5,9 @@ frontend:
       commands:
         - node --version
         - npm --version
-        - npm install
+        - npm ci
+        - npm run typecheck
+        - npm run test
     build:
       commands:
         - npx expo export --platform web
