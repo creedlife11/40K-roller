@@ -6,7 +6,7 @@
       "name": "Command Re-roll",
       "cp": 1,
       "phase": "any",
-      "when": "Just after making a D6 roll",
+      "when": "Just after making a D6 roll (Advance, Charge, Desperate Escape, or Hazardous test)",
       "effect": "Re-roll that dice. Each dice may only be re-rolled once.",
       "restriction": ""
     },
@@ -51,8 +51,8 @@
       "name": "Go to Ground",
       "cp": 1,
       "phase": "reaction",
-      "when": "Opponent's Shooting phase, when a friendly unit is selected as a target",
-      "effect": "Until end of phase, that unit gets +1 to its Armour Save characteristic.",
+      "when": "Opponent's Shooting phase, when a friendly Infantry unit is selected as a target",
+      "effect": "Until end of phase, each time an attack targets that unit, add 1 to the armour saving throw.",
       "restriction": "Infantry units only"
     }
   ],
@@ -66,118 +66,58 @@
           "name": "Gladius Task Force",
           "stratagems": [
             {
+              "id": "gtf-armour-of-contempt",
+              "name": "Armour of Contempt",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, worsen the AP of all attacks that target that unit by 1 (e.g. AP-2 becomes AP-1).",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "gtf-only-in-death",
+              "name": "Only in Death Does Duty End",
+              "cp": 2,
+              "phase": "fight",
+              "when": "Fight phase, when a friendly unit is destroyed",
+              "effect": "If that unit is not Battle-shocked, it can fight before being removed from the battlefield.",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "gtf-honour-the-chapter",
+              "name": "Honour the Chapter",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, just before a unit is selected to fight",
+              "effect": "Until end of phase, melee weapons that models in that unit are equipped with gain the [LANCE] ability.",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
               "id": "gtf-adaptive-strategy",
               "name": "Adaptive Strategy",
               "cp": 1,
               "phase": "command",
               "when": "Your Command phase",
-              "effect": "Select one friendly Gladius Task Force Battleline unit. Until the start of your next Command phase, improve the AP of that unit's ranged weapons by 1.",
-              "restriction": "Battleline units only"
+              "effect": "Select one Doctrine (Devastator, Tactical, or Assault). Until the start of your next Command phase, that Doctrine is active for your army in addition to any other active Doctrine.",
+              "restriction": "Adeptus Astartes units only"
             },
             {
-              "id": "gtf-armour-of-contempt",
-              "name": "Armour of Contempt",
+              "id": "gtf-storm-of-fire",
+              "name": "Storm of Fire",
+              "cp": 1,
+              "phase": "shooting",
+              "when": "Your Shooting phase, just before a unit shoots",
+              "effect": "Until end of phase, ranged weapons that models in that unit are equipped with gain the [IGNORES COVER] ability.",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "gtf-squad-tactics",
+              "name": "Squad Tactics",
               "cp": 1,
               "phase": "reaction",
-              "when": "Shooting or Fight phase, when a friendly unit is targeted by attacks",
-              "effect": "Until end of phase, improve the AP of all attacks that target that unit by 1 (e.g. AP-2 becomes AP-1) for the purposes of that unit's saving throws.",
+              "when": "Opponent's Movement phase, after an enemy unit is set up or ends a Normal, Advance, or Fall Back move within 9\" of a friendly unit",
+              "effect": "That friendly unit can make a Normal Move of up to D6\" (it cannot end this move within Engagement Range of any enemy unit).",
               "restriction": "Adeptus Astartes units only"
-            },
-            {
-              "id": "gtf-wisdom-of-ancients",
-              "name": "Wisdom of the Ancients",
-              "cp": 1,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Dreadnought unit. Until the start of your next Command phase, one other friendly unit within range of that Dreadnought's Aura ability also benefits from it.",
-              "restriction": "Dreadnought units only"
-            },
-            {
-              "id": "gtf-honour-the-chapter",
-              "name": "Honour the Chapter",
-              "cp": 2,
-              "phase": "fight",
-              "when": "Fight phase, when a friendly unit is destroyed",
-              "effect": "That unit can fight before it is removed from the battlefield.",
-              "restriction": "Adeptus Astartes units only"
-            },
-            {
-              "id": "gtf-vengeance",
-              "name": "Vengeance of Ultramar",
-              "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, just after an enemy unit destroys a friendly unit",
-              "effect": "Select one other friendly Adeptus Astartes unit within 6\" of the destroyed unit. Until end of phase, each time that unit makes a melee attack against the enemy unit that caused the destruction, re-roll wound rolls.",
-              "restriction": "Adeptus Astartes units only"
-            },
-            {
-              "id": "gtf-transhuman",
-              "name": "Transhuman Physiology",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Shooting or Fight phase, when a friendly unit is targeted",
-              "effect": "Until end of phase, each time an attack targets that unit, an unmodified wound roll of 1-3 always fails, regardless of any abilities.",
-              "restriction": "Adeptus Astartes Infantry or Biker units only"
-            }
-          ]
-        },
-        {
-          "id": "ironstorm-spearhead",
-          "name": "Ironstorm Spearhead",
-          "stratagems": [
-            {
-              "id": "ist-fury-machine-spirit",
-              "name": "Fury of the Machine Spirit",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before a Vehicle unit shoots",
-              "effect": "Until end of phase, that unit ignores any penalties to its hit rolls and its ranged weapons do not suffer the effects of any damage table entries.",
-              "restriction": "Vehicle units only"
-            },
-            {
-              "id": "ist-point-blank-volley",
-              "name": "Point-blank Volley",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before a unit shoots",
-              "effect": "Until end of phase, that unit's ranged weapons can target enemy units within Engagement Range of it.",
-              "restriction": "Cannot target a unit your own unit is in Engagement Range of"
-            },
-            {
-              "id": "ist-armoured-advance",
-              "name": "Armoured Advance",
-              "cp": 1,
-              "phase": "movement",
-              "when": "Your Movement phase, after a Vehicle unit Advances",
-              "effect": "That unit can still shoot this turn as if it had not moved, but cannot shoot Heavy weapons at their full Ballistic Skill.",
-              "restriction": "Vehicle units only"
-            },
-            {
-              "id": "ist-steel-behemoth",
-              "name": "Steel Behemoth",
-              "cp": 2,
-              "phase": "fight",
-              "when": "Fight phase, when a Vehicle unit is selected to fight",
-              "effect": "Until end of phase, that unit's Melee weapons have +1 Strength and +1 Damage.",
-              "restriction": "Vehicle units only. Cannot be used on a unit that has already fought this phase."
-            },
-            {
-              "id": "ist-cogitator-link",
-              "name": "Cogitator Targeting Link",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, after a friendly Vehicle unit shoots",
-              "effect": "Select one other friendly Ironstorm Spearhead Vehicle unit within 6\". It can re-roll hit rolls when targeting the same enemy unit this phase.",
-              "restriction": "Both units must be Vehicle units"
-            },
-            {
-              "id": "ist-orbital-strike",
-              "name": "Orbital Strike",
-              "cp": 3,
-              "phase": "shooting",
-              "when": "Your Shooting phase, once per battle",
-              "effect": "Pick a point on the battlefield. Every unit within 6\" of that point suffers D6 mortal wounds (roll separately for each unit).",
-              "restriction": "Once per battle"
             }
           ]
         }
@@ -188,62 +128,62 @@
       "name": "Blood Angels",
       "detachments": [
         {
-          "id": "sons-of-sanguinius",
-          "name": "Sons of Sanguinius",
+          "id": "liberator-assault-group",
+          "name": "Liberator Assault Group",
           "stratagems": [
             {
-              "id": "sos-red-rampage",
-              "name": "Red Rampage",
+              "id": "lag-angelic-grace",
+              "name": "Angelic Grace",
               "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, before a friendly unit fights",
-              "effect": "Until end of phase, add 1 to the Attacks characteristic of each model in that unit.",
+              "phase": "any",
+              "when": "Any phase, when a mortal wound is allocated to a friendly unit",
+              "effect": "Until end of phase, that unit has the Feel No Pain 5+ ability against mortal wounds.",
               "restriction": "Blood Angels units only"
             },
             {
-              "id": "sos-descent-of-angels",
-              "name": "Descent of Angels",
+              "id": "lag-aggressive-onslaught",
+              "name": "Aggressive Onslaught",
               "cp": 1,
               "phase": "movement",
-              "when": "Your Movement phase, before making a Charge roll",
-              "effect": "A Blood Angels unit that arrived from Reserves this turn can declare a Charge. Re-roll that unit's Charge roll.",
-              "restriction": "Jump Pack units only"
+              "when": "Your Movement phase, after a friendly unit Advances",
+              "effect": "Until end of turn, that unit can still shoot or charge. If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), until end of turn it can both shoot and charge.",
+              "restriction": "Blood Angels units only"
             },
             {
-              "id": "sos-the-red-thirst",
-              "name": "The Red Thirst",
+              "id": "lag-relentless-assault",
+              "name": "Relentless Assault",
               "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, just before a unit fights",
-              "effect": "Until end of phase, re-roll all failed wound rolls for that unit's melee attacks.",
-              "restriction": "Blood Angels units only. Cannot be used on a unit that has already fought this phase."
-            },
-            {
-              "id": "sos-upon-wings-of-fire",
-              "name": "Upon Wings of Fire",
-              "cp": 2,
               "phase": "movement",
-              "when": "End of your Movement phase",
-              "effect": "One Blood Angels Jump Pack unit that Fell Back this turn can still declare a Charge this turn.",
-              "restriction": "Jump Pack units only"
+              "when": "Your Movement phase, after a friendly unit Falls Back",
+              "effect": "Until end of turn, that unit can still shoot or charge. If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), until end of turn it can both shoot and charge.",
+              "restriction": "Blood Angels units only"
             },
             {
-              "id": "sos-only-in-death",
-              "name": "Only in Death Does Duty End",
-              "cp": 2,
-              "phase": "fight",
-              "when": "Fight phase, when a friendly CHARACTER is destroyed by an enemy attack",
-              "effect": "That CHARACTER can fight before it is removed from the battlefield, even if it has already fought this phase.",
-              "restriction": "Blood Angels CHARACTER units only"
+              "id": "lag-armour-of-contempt",
+              "name": "Armour of Contempt",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, worsen the AP of all attacks that target that unit by 1 (e.g. AP-2 becomes AP-1).",
+              "restriction": "Blood Angels units only"
             },
             {
-              "id": "sos-death-from-above",
-              "name": "Death from Above",
+              "id": "lag-savage-echoes",
+              "name": "Savage Echoes",
               "cp": 1,
               "phase": "charge",
-              "when": "Your Charge phase, when a Jump Pack unit declares a Charge",
-              "effect": "Until end of phase, each time that unit makes a melee attack on the turn it charges, add 1 to the Strength and Damage characteristics.",
-              "restriction": "Jump Pack units only"
+              "when": "Opponent's Charge phase, after a friendly unit is charged by an enemy unit",
+              "effect": "Until end of turn, add 1 to the Strength OR add 1 to the Attacks of melee weapons in that unit (your choice). If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), until end of turn it gains both bonuses.",
+              "restriction": "Blood Angels units only"
+            },
+            {
+              "id": "lag-red-rampage",
+              "name": "Red Rampage",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, just before a friendly unit is selected to fight",
+              "effect": "Until end of phase, melee weapons that models in that unit are equipped with gain the [LANCE] OR [LETHAL HITS] ability (your choice). If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), until end of phase they gain both abilities.",
+              "restriction": "Blood Angels units only"
             }
           ]
         }
@@ -254,122 +194,122 @@
       "name": "Aeldari",
       "detachments": [
         {
-          "id": "warhost",
-          "name": "Warhost",
-          "stratagems": [
-            {
-              "id": "wh-forewarned",
-              "name": "Forewarned",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Opponent's Movement phase, when an enemy unit is selected to move",
-              "effect": "One Aeldari unit can shoot at that enemy unit. Unlike Overwatch, this attack uses the unit's normal Ballistic Skill.",
-              "restriction": "Aeldari unit must be in range and not in Engagement Range of any enemy"
-            },
-            {
-              "id": "wh-phantasmal-blur",
-              "name": "Phantasmal Blur",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Shooting or Fight phase, when a friendly unit is targeted",
-              "effect": "Until end of phase, subtract 1 from hit rolls made against that unit.",
-              "restriction": "Aeldari units only"
-            },
-            {
-              "id": "wh-webway-strike",
-              "name": "Webway Strike",
-              "cp": 2,
-              "phase": "movement",
-              "when": "Your Movement phase",
-              "effect": "Remove one Aeldari Infantry unit from the battlefield and place it into Webway Reserves. At the start of any of your future Movement phases, it can arrive anywhere on the battlefield more than 9\" from any enemy unit.",
-              "restriction": "Infantry units only. Cannot be used once the unit has been placed in reserves once."
-            },
-            {
-              "id": "wh-lightning-reflexes",
-              "name": "Lightning-fast Reflexes",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Shooting or Fight phase, when a friendly unit is targeted",
-              "effect": "Until end of phase, improve the invulnerable save of that unit by 1 (e.g. 5+ becomes 4+).",
-              "restriction": "Aeldari units with an invulnerable save only"
-            },
-            {
-              "id": "wh-conceal",
-              "name": "Conceal",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Opponent's Shooting phase, when a friendly unit is targeted",
-              "effect": "Until end of phase, that unit counts as being in cover, even if it is not.",
-              "restriction": "Aeldari Infantry units only"
-            },
-            {
-              "id": "wh-runes-of-fortune",
-              "name": "Runes of Fortune",
-              "cp": 1,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Farseer or Warlock unit. That unit can use one additional psychic ability this turn.",
-              "restriction": "Farseer or Warlock units only"
-            }
-          ]
-        },
-        {
           "id": "aspect-host",
           "name": "Aspect Host",
           "stratagems": [
             {
-              "id": "ah-aspect-warriors-advance",
-              "name": "Warriors of the Shrines",
+              "id": "ah-preternatural-precision",
+              "name": "Preternatural Precision",
               "cp": 1,
-              "phase": "movement",
-              "when": "Your Movement phase, before an Aspect Warrior unit moves",
-              "effect": "That unit can Advance and still shoot or charge this turn. In addition, add 3\" to the unit's Advance roll.",
-              "restriction": "Aspect Warrior units only"
+              "phase": "shooting",
+              "when": "Your Shooting phase, just before an Aspect Warriors unit is selected to shoot",
+              "effect": "Choose one ability to grant that unit: [LETHAL HITS], [SUSTAINED HITS 1], or [IGNORES COVER]. If you first remove one Aspect Shrine token from that unit, choose two abilities instead.",
+              "restriction": "Aspect Warriors units only"
             },
             {
-              "id": "ah-exarch-power",
-              "name": "Exarch's Command",
+              "id": "ah-to-their-final-breath",
+              "name": "To Their Final Breath",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, when an Aspect Warriors or Avatar of Khaine unit has been selected as the target of attacks",
+              "effect": "Until end of phase, each time a model in that unit is destroyed without having fought this phase, roll one D6: on a 4+, that model can fight before being removed. If you first remove one Aspect Shrine token, add 1 to the result.",
+              "restriction": "Aspect Warriors or Avatar of Khaine units only"
+            },
+            {
+              "id": "ah-warrior-focus",
+              "name": "Warrior Focus",
+              "cp": 1,
+              "phase": "any",
+              "when": "Your Shooting or Fight phase, just before an Aspect Warriors or Avatar of Khaine unit is selected to shoot or fight",
+              "effect": "Until end of phase, ignore all modifiers to that unit's Hit rolls, Ballistic Skill, Weapon Skill, Strength, AP, and Damage characteristics.",
+              "restriction": "Aspect Warriors or Avatar of Khaine units only"
+            },
+            {
+              "id": "ah-strike-and-fade",
+              "name": "Strike and Fade",
+              "cp": 1,
+              "phase": "shooting",
+              "when": "Your Shooting phase, after an Aspect Warriors unit has shot",
+              "effect": "That unit can immediately make a Normal Move of up to 6\". It cannot end this move within Engagement Range of any enemy unit.",
+              "restriction": "Aspect Warriors units only. That unit must not have Advanced this turn."
+            },
+            {
+              "id": "ah-inescapable-doom",
+              "name": "Inescapable Doom",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, just before an Aspect Warriors unit is selected to fight",
+              "effect": "Until end of phase, each time a model in that unit makes a melee attack, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.",
+              "restriction": "Aspect Warriors units only"
+            },
+            {
+              "id": "ah-path-of-command",
+              "name": "Path of Command",
               "cp": 1,
               "phase": "command",
               "when": "Your Command phase",
-              "effect": "Select one Aspect Warrior unit with an Exarch model. Until the start of your next Command phase, double the range of that Exarch's aura abilities.",
-              "restriction": "Aspect Warrior units with an Exarch only"
-            },
+              "effect": "Select one Aspect Warriors unit that has at least one Aspect Shrine token. Add 1 Aspect Shrine token to that unit.",
+              "restriction": "Aspect Warriors units only. Cannot take a unit above its maximum token limit."
+            }
+          ]
+        },
+        {
+          "id": "guardian-battlehost",
+          "name": "Guardian Battlehost",
+          "stratagems": [
             {
-              "id": "ah-death-of-a-thousand-cuts",
-              "name": "Death of a Thousand Cuts",
+              "id": "gbh-woe-betide",
+              "name": "Woe Betide the Foe",
               "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before an Aspect Warrior unit shoots",
-              "effect": "Until end of phase, each time a model in that unit makes a ranged attack, an unmodified hit roll of 6 scores 1 additional hit.",
-              "restriction": "Aspect Warrior units only"
+              "phase": "any",
+              "when": "Your Shooting phase or Fight phase, just before a Dire Avengers or Guardians unit is selected to shoot or fight",
+              "effect": "Until end of phase, each time a model in that unit makes an attack that targets an enemy unit within range of an objective marker, you can re-roll the Wound roll.",
+              "restriction": "Dire Avengers or Guardians units only"
             },
             {
-              "id": "ah-phoenix-rising",
-              "name": "Phoenix Rising",
-              "cp": 2,
-              "phase": "fight",
-              "when": "Fight phase, when a Phoenix Lord CHARACTER is destroyed",
-              "effect": "That Phoenix Lord can fight before being removed from the battlefield and, if it destroys the attacking enemy unit, it is placed in Reserves instead of being removed.",
-              "restriction": "Phoenix Lord units only"
-            },
-            {
-              "id": "ah-swift-and-deadly",
-              "name": "Swift and Deadly",
+              "id": "gbh-shield-of-craftworld",
+              "name": "Shield of the Craftworld",
               "cp": 1,
-              "phase": "charge",
-              "when": "Your Charge phase, when an Aspect Warrior unit declares a Charge",
-              "effect": "Add 2 to that unit's Charge roll. If the Charge is successful, that unit fights first in the Fight phase this turn.",
-              "restriction": "Aspect Warrior units only"
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, each time an attack targets that unit, if your unit is within range of an objective marker, add 1 to the armour saving throw.",
+              "restriction": "Dire Avengers or Guardians units only"
             },
             {
-              "id": "ah-wrath-of-the-shrine",
-              "name": "Wrath of the Shrine",
+              "id": "gbh-vengeful-retort",
+              "name": "Vengeful Retort",
               "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, just before an Aspect Warrior unit fights",
-              "effect": "Until end of phase, improve the AP of all melee weapons that models in that unit are equipped with by 1.",
-              "restriction": "Aspect Warrior units only"
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit destroys a friendly Dire Avengers or Guardians unit",
+              "effect": "After that enemy unit has finished making its attacks, one friendly War Walkers unit can shoot as if it were your Shooting phase, but can only target that enemy unit. Once per battle round.",
+              "restriction": "War Walkers units only"
+            },
+            {
+              "id": "gbh-storm-advance",
+              "name": "Rapid Advance",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase, just before a Storm Guardians unit is selected to move",
+              "effect": "Until end of phase, do not roll for that unit's Advance move. Instead, add 6\" to the Move characteristic of models in that unit.",
+              "restriction": "Storm Guardians units only"
+            },
+            {
+              "id": "gbh-webway-strike",
+              "name": "Webway Ambush",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase",
+              "effect": "Remove one Dire Avengers or Guardians unit from the battlefield and place it into Strategic Reserves. At the start of any of your future Movement phases, it can arrive anywhere on the battlefield more than 9\" from any enemy unit.",
+              "restriction": "Infantry units only. Cannot be used if the unit is in Engagement Range of any enemy."
+            },
+            {
+              "id": "gbh-fortune",
+              "name": "Fortune",
+              "cp": 1,
+              "phase": "command",
+              "when": "Your Command phase",
+              "effect": "Select one Aeldari Psyker unit within 12\" of a Guardians or Dire Avengers unit. Until the start of your next Command phase, each time an attack targets one friendly Guardians or Dire Avengers unit within 9\" of that Psyker, the attacker's hit roll cannot be re-rolled.",
+              "restriction": "Aeldari Psyker units only"
             }
           ]
         }
@@ -384,124 +324,58 @@
           "name": "Awakened Dynasty",
           "stratagems": [
             {
-              "id": "ad-emergency-protocols",
-              "name": "Emergency Protocols",
+              "id": "awd-eternal-guardian",
+              "name": "Protocol of the Eternal Guardian",
               "cp": 1,
               "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Necron unit that has not yet used Reanimation Protocols this phase. That unit immediately benefits from Reanimation Protocols as if it were the start of your Command phase.",
-              "restriction": "Necron units with Reanimation Protocols only"
+              "when": "Your Command phase. Epic Deed.",
+              "effect": "Select one NOBLE or OVERLORD unit. Until the start of your next Command phase, that unit cannot be Battle-shocked and friendly units within 6\" of it are not affected by Battle-shock.",
+              "restriction": "Noble or Overlord units only. Once per battle."
             },
             {
-              "id": "ad-disruption-fields",
-              "name": "Disruption Fields",
+              "id": "awd-hungry-void",
+              "name": "Protocol of the Hungry Void",
               "cp": 1,
               "phase": "fight",
-              "when": "Fight phase, before a friendly unit fights",
-              "effect": "Until end of phase, add 1 to wound rolls for that unit's melee attacks against Vehicle and Monster units.",
-              "restriction": "Necron units only"
+              "when": "Fight phase, just before a Necrons unit is selected to fight",
+              "effect": "Until end of phase, add 1 to the Strength characteristic of melee weapons that models in that unit are equipped with, and improve the AP of those weapons by 1.",
+              "restriction": "Necrons units only"
             },
             {
-              "id": "ad-my-will-be-done",
-              "name": "My Will Be Done",
-              "cp": 1,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Noble unit. Until the start of your next Command phase, friendly Core units within 6\" of that Noble add 1 to their hit rolls.",
-              "restriction": "Noble units only"
-            },
-            {
-              "id": "ad-cosmic-horror",
-              "name": "Cosmic Horror",
-              "cp": 1,
-              "phase": "any",
-              "when": "Any Battle Shock test made for an enemy unit within 24\" of a Necron unit",
-              "effect": "That enemy unit must re-roll its Battle Shock test.",
-              "restriction": "Can only be used once per turn"
-            },
-            {
-              "id": "ad-entropic-strike",
-              "name": "Entropic Strike",
+              "id": "awd-conquering-tyrant",
+              "name": "Protocol of the Conquering Tyrant",
               "cp": 1,
               "phase": "shooting",
-              "when": "Your Shooting phase, before a Necron unit shoots",
-              "effect": "Until end of phase, each time a model in that unit makes an attack with a Gauss weapon, improve the AP by 1 and that attack ignores invulnerable saves.",
-              "restriction": "Units with Gauss weapons only"
+              "when": "Your Shooting phase, just before a Necrons unit is selected to shoot",
+              "effect": "Until end of phase, each time a model in that unit makes a ranged attack, if the target is within half the weapon's range, you can re-roll the Wound roll.",
+              "restriction": "Necrons units only"
             },
             {
-              "id": "ad-we-are-eternal",
-              "name": "We Are Eternal",
-              "cp": 2,
-              "phase": "any",
-              "when": "When a Necron unit is destroyed",
-              "effect": "Roll one D6. On a 4+, that unit is returned to Reserves with half its starting number of models and can return to the battlefield using Rapid Ingress.",
-              "restriction": "Infantry units only. Once per battle per unit."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "orks",
-      "name": "Orks",
-      "detachments": [
-        {
-          "id": "waaagh-tribe",
-          "name": "Waaagh! Tribe",
-          "stratagems": [
-            {
-              "id": "wt-waaagh",
-              "name": "WAAAGH!",
-              "cp": 2,
-              "phase": "any",
-              "when": "Once per battle, at the start of your turn",
-              "effect": "Until the end of your turn, all friendly Ork units add 1 to their Attacks characteristic and add 1 to all Charge rolls.",
-              "restriction": "Once per battle"
-            },
-            {
-              "id": "wt-ere-we-go",
-              "name": "'Ere We Go!",
+              "id": "awd-undying-legions",
+              "name": "Protocol of the Undying Legions",
               "cp": 1,
-              "phase": "charge",
-              "when": "Your Charge phase, when an Ork unit declares a Charge",
-              "effect": "Re-roll that unit's Charge roll.",
-              "restriction": "Ork units only"
+              "phase": "reaction",
+              "when": "Any phase, just after an enemy unit has finished making its attacks against a Necrons unit",
+              "effect": "If any models in that unit were destroyed by those attacks, initiate Reanimation Protocols for that unit. Roll one D3 extra reanimation dice in addition to the normal amount.",
+              "restriction": "Necrons units with Reanimation Protocols only"
             },
             {
-              "id": "wt-dakka",
-              "name": "Dakka! Dakka! Dakka!",
+              "id": "awd-sudden-storm",
+              "name": "Protocol of the Sudden Storm",
               "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before an Ork unit shoots",
-              "effect": "Until end of phase, each time a model in that unit makes a ranged attack, an unmodified hit roll of 6 scores 1 additional hit.",
-              "restriction": "Ork units only"
+              "phase": "movement",
+              "when": "Your Movement phase, just before a Necrons unit is selected to move",
+              "effect": "Until end of turn, ranged weapons that models in that unit are equipped with gain the [ASSAULT] ability. In addition, when that unit Advances this turn, you can re-roll the Advance roll.",
+              "restriction": "Necrons units only"
             },
             {
-              "id": "wt-mob-rule",
-              "name": "Mob Rule",
+              "id": "awd-vengeful-stars",
+              "name": "Protocol of the Vengeful Stars",
               "cp": 1,
-              "phase": "command",
-              "when": "Battle Shock step of your Command phase",
-              "effect": "Select one friendly Ork unit that failed a Battle Shock test. That unit uses the Leadership characteristic of the nearest friendly Ork unit within 6\" instead of its own.",
-              "restriction": "Ork units only"
-            },
-            {
-              "id": "wt-kunnin-but-brutal",
-              "name": "Kunnin' But Brutal",
-              "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, just before an Ork unit is chosen to fight",
-              "effect": "Until end of phase, that unit fights before any unit that has not Charged or Heroically Intervened this turn, unless that unit also has this ability.",
-              "restriction": "Ork units only"
-            },
-            {
-              "id": "wt-ramming-speed",
-              "name": "Ramming Speed!",
-              "cp": 1,
-              "phase": "charge",
-              "when": "Your Charge phase, after an Ork Vehicle unit ends a Charge move",
-              "effect": "Roll one D3. The enemy unit that was Charged suffers that many mortal wounds.",
-              "restriction": "Ork Vehicle units only"
+              "phase": "reaction",
+              "when": "Opponent's Shooting phase, just after an enemy unit has finished making its attacks against a Necrons unit",
+              "effect": "If any models in that unit were destroyed by those attacks, that Necrons unit can shoot as if it were your Shooting phase, but can only target the attacking enemy unit.",
+              "restriction": "Necrons units only. Once per phase."
             }
           ]
         }
@@ -516,58 +390,124 @@
           "name": "Invasion Fleet",
           "stratagems": [
             {
-              "id": "if-synaptic-imperative",
-              "name": "Synaptic Imperative",
+              "id": "inf-rapid-regeneration",
+              "name": "Rapid Regeneration",
               "cp": 1,
               "phase": "command",
               "when": "Your Command phase",
-              "effect": "Select one friendly Synapse unit. Until the start of your next Command phase, one additional unit within 12\" of that Synapse unit benefits from its Synapse Link ability.",
-              "restriction": "Synapse units only"
+              "effect": "Select one Tyranids unit that has lost one or more wounds. That unit regains up to D3 lost wounds.",
+              "restriction": "Tyranids units only. Cannot be used on a unit that has already used Rapid Regeneration this battle."
             },
             {
-              "id": "if-voracious-appetite",
-              "name": "Voracious Appetite",
+              "id": "inf-death-frenzy",
+              "name": "Death Frenzy",
               "cp": 1,
               "phase": "fight",
-              "when": "Fight phase, just before a unit fights",
-              "effect": "Until end of phase, re-roll all failed wound rolls for that unit's melee attacks.",
-              "restriction": "Tyranid units only. Cannot be used on a unit that has already fought this phase."
+              "when": "Fight phase, when a friendly Tyranids unit is destroyed",
+              "effect": "Roll one D6. On a 4+, that unit can fight before being removed from the battlefield.",
+              "restriction": "Tyranids non-VEHICLE units only"
             },
             {
-              "id": "if-metabolic-overdrive",
-              "name": "Metabolic Overdrive",
+              "id": "inf-adrenal-surge",
+              "name": "Adrenal Surge",
+              "cp": 2,
+              "phase": "fight",
+              "when": "Fight phase, just before a Tyranids unit is selected to fight",
+              "effect": "Until end of phase, each time a model in that unit makes a melee attack, a hit roll of 5+ scores a Critical Hit.",
+              "restriction": "Tyranids units only"
+            },
+            {
+              "id": "inf-endless-swarm",
+              "name": "Endless Swarm",
               "cp": 1,
-              "phase": "movement",
-              "when": "Your Movement phase, before a unit moves",
-              "effect": "That unit can Advance and still declare a Charge this turn.",
-              "restriction": "Tyranid units only"
+              "phase": "command",
+              "when": "Your Command phase",
+              "effect": "Select one destroyed Tyranids Infantry unit. A new unit identical to the destroyed unit is added to your Strategic Reserves with D3+3 models, all with their full wounds remaining.",
+              "restriction": "Tyranids Infantry units only. Once per unit per battle."
             },
             {
-              "id": "if-acid-blood",
-              "name": "Acid Blood",
+              "id": "inf-overrun",
+              "name": "Overrun",
               "cp": 1,
               "phase": "fight",
-              "when": "Fight phase, when a friendly unit loses one or more wounds to melee attacks",
-              "effect": "The attacking enemy unit suffers D3 mortal wounds.",
-              "restriction": "Tyranid units only. Can only be used once per phase."
+              "when": "Fight phase, after a Tyranids unit has fought",
+              "effect": "That unit can make an additional Consolidation move of up to 3\".",
+              "restriction": "Tyranids units only. That unit must have fought in this activation."
             },
             {
-              "id": "if-lurk-in-shadows",
-              "name": "Lurk in the Shadows",
+              "id": "inf-predatory-imperative",
+              "name": "Predatory Imperative",
+              "cp": 1,
+              "phase": "command",
+              "when": "Your Command phase",
+              "effect": "Select one Tyranids unit that is within Synapse range of a friendly Synapse unit. Until the start of your next Command phase, that unit gains one of the following: [SUSTAINED HITS 1] (shooting), or +1 Attack (melee), or add 2\" to its Move characteristic.",
+              "restriction": "Tyranids units within Synapse range only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "orks",
+      "name": "Orks",
+      "detachments": [
+        {
+          "id": "war-horde",
+          "name": "War Horde",
+          "stratagems": [
+            {
+              "id": "wh-ere-we-go",
+              "name": "'Ere We Go",
+              "cp": 1,
+              "phase": "charge",
+              "when": "Your Charge phase, just before a friendly Orks Infantry unit is selected to charge",
+              "effect": "Add 2 to that unit's Advance and Charge rolls until end of phase.",
+              "restriction": "Orks Infantry units only"
+            },
+            {
+              "id": "wh-ard-as-nails",
+              "name": "'Ard as Nails",
               "cp": 1,
               "phase": "reaction",
-              "when": "Opponent's Shooting phase, before a friendly unit is targeted",
-              "effect": "Until end of phase, that unit counts as being in cover and cannot be targeted by weapons with the Ignores Cover ability.",
-              "restriction": "Tyranid Infantry units only. Unit must not have moved this turn."
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, subtract 1 from all Wound rolls made against that unit.",
+              "restriction": "Orks units only (not GRETCHIN, VEHICLE, or MONSTER)"
             },
             {
-              "id": "if-the-swarm-descends",
-              "name": "The Swarm Descends",
-              "cp": 2,
-              "phase": "charge",
-              "when": "Your Charge phase",
-              "effect": "Until end of phase, add 1 to Charge rolls for all friendly Tyranid units. In addition, each time a friendly unit successfully Charges this phase, it can make a free Pile-in move of up to 3\" before attacking.",
-              "restriction": "Tyranid units only. Once per battle."
+              "id": "wh-mob-rule",
+              "name": "Mob Rule",
+              "cp": 1,
+              "phase": "command",
+              "when": "Battle Shock step of your Command phase",
+              "effect": "Select one Orks INFANTRY unit that is not Below Half-strength and has 10 or more models. Until the start of your next Command phase, you can use Stratagems on Battle-shocked friendly Orks INFANTRY units within 6\" of that unit.",
+              "restriction": "Orks units only"
+            },
+            {
+              "id": "wh-unbridled-carnage",
+              "name": "Unbridled Carnage",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, just before a friendly Orks unit is selected to fight",
+              "effect": "Until end of phase, each time a model in that unit makes a melee attack, a hit roll of 5+ scores a Critical Hit.",
+              "restriction": "Orks units only"
+            },
+            {
+              "id": "wh-careen",
+              "name": "Careen!",
+              "cp": 1,
+              "phase": "any",
+              "when": "Any phase, when a friendly Orks VEHICLE unit with the Deadly Demise ability is destroyed and rolls a 6 for that ability. Epic Deed.",
+              "effect": "Before resolving the Deadly Demise ability, that unit can make a Normal Move or Fall Back move of up to its Move characteristic. It can move over enemy units (except MONSTERS and VEHICLES) as though they weren't there.",
+              "restriction": "Orks VEHICLE units with Deadly Demise only"
+            },
+            {
+              "id": "wh-orks-is-never-beaten",
+              "name": "Orks is Never Beaten",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Charge phase, when a friendly Orks unit fails a Battle Shock test",
+              "effect": "That unit does not suffer the effects of Battle-shock until the end of your next turn. In addition, add 1 to that unit's Objective Control characteristic until the start of your next Command phase.",
+              "restriction": "Orks units only"
             }
           ]
         }
@@ -578,62 +518,62 @@
       "name": "Chaos Space Marines",
       "detachments": [
         {
-          "id": "slaves-to-darkness",
-          "name": "Slaves to Darkness",
+          "id": "veterans-of-the-long-war",
+          "name": "Veterans of the Long War",
           "stratagems": [
             {
-              "id": "std-death-false-emperor",
-              "name": "Death to the False Emperor!",
+              "id": "vlw-contemptuous-disregard",
+              "name": "Contemptuous Disregard",
               "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, before a Heretic Astartes unit fights",
-              "effect": "Until end of phase, each time a model in that unit makes a melee attack against an Adeptus Astartes unit, an unmodified hit roll of 6 scores 1 additional hit.",
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, worsen the AP of all attacks that target that unit by 1 (e.g. AP-2 becomes AP-1).",
               "restriction": "Heretic Astartes units only"
             },
             {
-              "id": "std-malicious-volleys",
-              "name": "Malicious Volleys",
+              "id": "vlw-millennia-of-experience",
+              "name": "Millennia of Experience",
               "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before a unit shoots",
-              "effect": "Until end of phase, Rapid Fire weapons that models in that unit are equipped with have their Rapid Fire value doubled.",
-              "restriction": "Heretic Astartes units only"
+              "phase": "reaction",
+              "when": "Opponent's Movement or Charge phase, when an enemy unit is set up or ends a move within 9\" of a friendly unit",
+              "effect": "That friendly unit can immediately make a Normal Move of up to 6\". It cannot end this move within Engagement Range of any enemy unit.",
+              "restriction": "Non-DAMNED Heretic Astartes units only"
             },
             {
-              "id": "std-veterans-long-war",
-              "name": "Veterans of the Long War",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting or Fight phase, before a unit makes attacks",
-              "effect": "Until end of phase, add 1 to wound rolls for that unit's attacks against Adeptus Astartes units.",
-              "restriction": "Heretic Astartes units only"
-            },
-            {
-              "id": "std-dark-pact",
-              "name": "Dark Pact",
+              "id": "vlw-bringers-of-despair",
+              "name": "Bringers of Despair",
               "cp": 2,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Chaos unit. Until your next Command phase, add 1 to the Attacks and Strength characteristics of models in that unit. However, at the start of your next Command phase, that unit suffers D3 mortal wounds.",
-              "restriction": "Chaos units only"
+              "phase": "fight",
+              "when": "Fight phase, just before a non-DAMNED unit within Engagement Range of your Focus of Hatred is selected to fight. Epic Deed.",
+              "effect": "Until end of phase, that unit has the Fights First ability.",
+              "restriction": "Non-DAMNED units within Engagement Range of your Focus of Hatred only"
             },
             {
-              "id": "std-warp-surge",
+              "id": "vlw-endless-ire",
+              "name": "Endless Ire",
+              "cp": 2,
+              "phase": "any",
+              "when": "Any phase, when your current Focus of Hatred unit is destroyed. Epic Deed.",
+              "effect": "Select one visible enemy unit within 12\" of a friendly non-DAMNED CHARACTER unit. That enemy unit becomes your new Focus of Hatred until your next Command phase.",
+              "restriction": "Must have a non-DAMNED CHARACTER unit on the battlefield"
+            },
+            {
+              "id": "vlw-black-crusade",
+              "name": "Black Crusade",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase, just before a non-DAMNED Infantry or Mounted unit is selected to move",
+              "effect": "Until end of turn, that unit can shoot after Advancing or Falling Back. In addition, until end of turn, bolt pistols, boltguns, and combi-bolters that models in that unit are equipped with gain the [DEVASTATING WOUNDS] ability.",
+              "restriction": "Non-DAMNED Heretic Astartes Infantry or Mounted units only"
+            },
+            {
+              "id": "vlw-warp-surge",
               "name": "Warp Surge",
               "cp": 1,
               "phase": "fight",
-              "when": "Fight phase, before a Daemon unit fights",
-              "effect": "Until end of phase, add 1 to wound rolls for all attacks made by models in that unit.",
-              "restriction": "Daemon units only"
-            },
-            {
-              "id": "std-apoplectic-frenzy",
-              "name": "Apoplectic Frenzy",
-              "cp": 2,
-              "phase": "fight",
-              "when": "Fight phase, after a friendly unit has fought",
-              "effect": "That unit can fight a second time. All hit rolls for this second fight are made at -1.",
-              "restriction": "Heretic Astartes units only. Cannot be used if the unit is below half strength."
+              "when": "Fight phase, just before a friendly unit is selected to fight",
+              "effect": "Until end of phase, add 1 to the Attacks characteristic of models in that unit. In addition, each time a model in that unit makes a melee attack, re-roll a Wound roll of 1.",
+              "restriction": "Heretic Astartes or DAEMON units only"
             }
           ]
         }
@@ -644,62 +584,62 @@
       "name": "Death Guard",
       "detachments": [
         {
-          "id": "plague-company",
-          "name": "Plague Company",
+          "id": "virulent-vectorium",
+          "name": "Virulent Vectorium",
           "stratagems": [
             {
-              "id": "pc-contagion-protocol",
-              "name": "Contagion Protocol",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting or Fight phase, before a unit makes attacks",
-              "effect": "Until end of phase, each time a model in that unit makes an attack, an unmodified wound roll of 5+ inflicts 1 mortal wound on the target in addition to any normal damage.",
-              "restriction": "Death Guard units only"
+              "id": "vv-plaguesurge",
+              "name": "Plaguesurge",
+              "cp": 2,
+              "phase": "command",
+              "when": "Your Command phase. Epic Deed.",
+              "effect": "If your WARLORD is on the battlefield, until the start of your next Command phase, add 3\" to the Contagion Range of models from your army.",
+              "restriction": "Warlord must be on the battlefield. Once per battle."
             },
             {
-              "id": "pc-cloud-of-flies",
-              "name": "Cloud of Flies",
+              "id": "vv-leechspore-eruption",
+              "name": "Leechspore Eruption",
               "cp": 1,
-              "phase": "reaction",
-              "when": "Opponent's Shooting phase, when a friendly unit is selected as a target",
-              "effect": "Until end of phase, subtract 1 from hit rolls made against that unit.",
-              "restriction": "Plague Marine units only"
+              "phase": "command",
+              "when": "Your Command phase",
+              "effect": "Select one Death Guard model that has lost one or more wounds. Select one enemy unit within 3\" of that model. Roll a number of D6 equal to the number of wounds that model has lost. For each 5+, that enemy unit suffers 1 mortal wound (max 6) and your model regains 1 lost wound (max 6).",
+              "restriction": "Death Guard non-VEHICLE units only"
             },
             {
-              "id": "pc-disgustingly-resilient",
+              "id": "vv-disgustingly-resilient",
               "name": "Disgustingly Resilient",
-              "cp": 1,
+              "cp": 2,
               "phase": "reaction",
-              "when": "Shooting or Fight phase, when a friendly unit is targeted",
-              "effect": "Until end of phase, each time a model in that unit would lose a wound, roll one D6. On a 5+, that wound is not lost.",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, each time an attack is allocated to a model in that unit, subtract 1 from the Damage characteristic of that attack (to a minimum of 1).",
               "restriction": "Death Guard units only"
             },
             {
-              "id": "pc-curse-of-the-leper",
-              "name": "Curse of the Leper",
-              "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, before a Death Guard unit fights",
-              "effect": "Until end of phase, subtract 1 from the Toughness characteristic of enemy units targeted by that unit's melee attacks.",
-              "restriction": "Death Guard units only"
-            },
-            {
-              "id": "pc-walking-plague",
-              "name": "Walking Plague",
+              "id": "vv-putrid-detonation",
+              "name": "Putrid Detonation",
               "cp": 1,
               "phase": "any",
-              "when": "End of any phase",
-              "effect": "Select one enemy unit within 3\" of a friendly Death Guard unit. Roll one D3. On a 2+, that enemy unit suffers that many mortal wounds.",
-              "restriction": "Can only be used once per phase"
+              "when": "Any phase, when a friendly Death Guard VEHICLE or MONSTER unit with the Deadly Demise ability is destroyed",
+              "effect": "Do not roll to determine whether Deadly Demise mortal wounds are inflicted — they are automatically inflicted. Any enemy units that suffer mortal wounds from this explosion are Afflicted until the start of your next turn.",
+              "restriction": "Death Guard VEHICLE or MONSTER units with Deadly Demise only"
             },
             {
-              "id": "pc-plague-wind",
-              "name": "Plague Wind",
-              "cp": 2,
+              "id": "vv-overwhelming-generosity",
+              "name": "Overwhelming Generosity",
+              "cp": 1,
               "phase": "shooting",
-              "when": "Your Shooting phase, before a Death Guard unit shoots",
-              "effect": "Until end of phase, ranged attacks made by that unit have the Lethal Hits and Devastating Wounds abilities.",
-              "restriction": "Death Guard units only. Once per battle."
+              "when": "Your Shooting phase",
+              "effect": "Select one Death Guard CHARACTER unit and one enemy unit visible to it. Until end of phase, each time a Death Guard unit from your army makes a ranged attack that targets that enemy unit, you can re-roll the dice used to determine the number of attacks made by that weapon.",
+              "restriction": "Death Guard CHARACTER units only"
+            },
+            {
+              "id": "vv-creeping-blight",
+              "name": "Creeping Blight",
+              "cp": 1,
+              "phase": "shooting",
+              "when": "Your Shooting phase, just before a Death Guard Infantry unit that has not yet been selected to shoot is selected to shoot",
+              "effect": "Until end of phase, each time a model in that unit makes a ranged attack that targets an Afflicted unit, you can re-roll the Hit roll and you can re-roll the Wound roll.",
+              "restriction": "Death Guard INFANTRY units only"
             }
           ]
         }
@@ -710,62 +650,62 @@
       "name": "Astra Militarum",
       "detachments": [
         {
-          "id": "combined-regiment",
-          "name": "Combined Regiment",
+          "id": "combined-arms",
+          "name": "Combined Arms",
           "stratagems": [
             {
-              "id": "cr-volley-fire",
-              "name": "Volley Fire",
+              "id": "ca-fields-of-fire",
+              "name": "Fields of Fire",
               "cp": 1,
               "phase": "shooting",
-              "when": "Your Shooting phase, before an Infantry unit shoots",
-              "effect": "Until end of phase, that unit can shoot twice, but must target the same enemy unit with all attacks and cannot move this turn if it hasn't already.",
-              "restriction": "Astra Militarum Infantry units that did not move this turn"
+              "when": "Your Shooting phase, just before two Astra Militarum units are selected to shoot the same enemy unit",
+              "effect": "Until end of phase, improve the AP of all attacks made by those two units against that enemy unit by 1.",
+              "restriction": "Astra Militarum units only. Both units must target the same enemy unit."
             },
             {
-              "id": "cr-take-cover",
-              "name": "Take Cover!",
-              "cp": 1,
-              "phase": "reaction",
-              "when": "Opponent's Shooting phase, when a friendly unit is selected as a target",
-              "effect": "Until end of phase, add 1 to Armour Save rolls made for models in that unit.",
-              "restriction": "Astra Militarum Infantry units only"
-            },
-            {
-              "id": "cr-voice-of-command",
-              "name": "Voice of Command",
+              "id": "ca-inspired-command",
+              "name": "Inspired Command",
               "cp": 1,
               "phase": "command",
-              "when": "Your Command phase, when issuing orders",
-              "effect": "One Officer unit can issue one additional order this Command phase.",
-              "restriction": "Officer units only"
+              "when": "Opponent's Command phase. Epic Deed.",
+              "effect": "Select one friendly Astra Militarum OFFICER unit on the battlefield. That OFFICER unit can immediately issue one Order as if it were your Command phase.",
+              "restriction": "Astra Militarum OFFICER units only. Once per battle round."
             },
             {
-              "id": "cr-forward-for-emperor",
-              "name": "For the Emperor! Advance!",
+              "id": "ca-stalwart-protector",
+              "name": "Stalwart Protector",
               "cp": 1,
-              "phase": "movement",
-              "when": "Your Movement phase, before a unit Advances",
-              "effect": "Until end of turn, that unit can Advance and still shoot its ranged weapons as if it had not moved, and can still declare a Charge.",
-              "restriction": "Astra Militarum Infantry units only"
+              "phase": "reaction",
+              "when": "Opponent's Shooting phase, just after an enemy unit has selected its targets",
+              "effect": "Select one Astra Militarum VEHICLE unit within 3\" of one of the targeted friendly INFANTRY units. Until end of phase, the targeted INFANTRY units within 3\" of that VEHICLE unit count as being in cover.",
+              "restriction": "Astra Militarum VEHICLE and INFANTRY units only"
             },
             {
-              "id": "cr-fire-for-effect",
-              "name": "Fire for Effect",
+              "id": "ca-reinforcements",
+              "name": "Reinforcements!",
               "cp": 2,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before an Artillery unit shoots",
-              "effect": "Until end of phase, that unit's ranged attacks have the Indirect Fire ability and its hit rolls cannot be modified.",
-              "restriction": "Artillery units only. Cannot be used if the unit is in Engagement Range."
+              "phase": "any",
+              "when": "Any phase, when a friendly Astra Militarum Infantry Regiment unit is destroyed",
+              "effect": "A new unit identical to the destroyed unit (at its Starting Strength, with all wounds remaining) is added to your Strategic Reserves and can arrive in subsequent turns.",
+              "restriction": "Astra Militarum Infantry Regiment units only. Once per unit per battle."
             },
             {
-              "id": "cr-consolidate-squads",
-              "name": "Consolidate Squads",
+              "id": "ca-suppression-fire",
+              "name": "Suppression Fire",
               "cp": 1,
-              "phase": "movement",
-              "when": "Your Movement phase",
-              "effect": "Select two friendly Infantry units within 3\" of each other. Merge them into one unit with a combined model count. The merged unit uses the better Leadership and OC characteristics.",
-              "restriction": "Both units must have fewer than their starting number of models and share the same unit type"
+              "phase": "shooting",
+              "when": "Your Shooting phase, after a friendly Astra Militarum unit has shot and scored at least one hit against an enemy unit",
+              "effect": "Until the start of your next Command phase, subtract 1 from the Ballistic Skill of models in that enemy unit.",
+              "restriction": "Cannot target MONSTER or VEHICLE units"
+            },
+            {
+              "id": "ca-expert-bombardiers",
+              "name": "Expert Bombardiers",
+              "cp": 1,
+              "phase": "shooting",
+              "when": "Your Shooting phase, just before a friendly unit with [INDIRECT FIRE] weapons is selected to shoot",
+              "effect": "Until end of phase, add 1 to Hit rolls for attacks made with [INDIRECT FIRE] weapons by models in that unit, provided one friendly unit with a vox-caster has line of sight to the target.",
+              "restriction": "Astra Militarum units with [INDIRECT FIRE] weapons only"
             }
           ]
         }
@@ -780,58 +720,58 @@
           "name": "Skitarii Hunter Cohort",
           "stratagems": [
             {
-              "id": "shc-elimination-protocol",
-              "name": "Elimination Protocol",
+              "id": "shc-bionic-endurance",
+              "name": "Bionic Endurance",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, that unit has the Feel No Pain 5+ ability.",
+              "restriction": "SICARIAN, PTERAXII, or SYDONIAN units only"
+            },
+            {
+              "id": "shc-binharic-offence",
+              "name": "Binharic Offence",
               "cp": 1,
               "phase": "shooting",
-              "when": "Your Shooting phase, before a Skitarii unit shoots",
-              "effect": "Select one enemy unit visible to that Skitarii unit. Until end of phase, add 1 to wound rolls for attacks made by that Skitarii unit against that enemy unit.",
+              "when": "Your Shooting phase, just before two Skitarii units are selected to shoot",
+              "effect": "Select one enemy unit. Until end of phase, improve the AP of ranged attacks made by those two Skitarii units against that enemy unit by 1. Those units can only target that enemy unit this phase.",
+              "restriction": "Skitarii units only. Both units must target the same enemy unit."
+            },
+            {
+              "id": "shc-expedited-purge",
+              "name": "Expedited Purge Protocol",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase, just before a Skitarii unit is selected to move",
+              "effect": "Until end of turn, that unit can Advance and still declare a Charge this turn.",
               "restriction": "Skitarii units only"
             },
             {
-              "id": "shc-doctrina-imperatives",
-              "name": "Doctrina Imperatives",
+              "id": "shc-isolate-and-destroy",
+              "name": "Isolate and Destroy",
               "cp": 1,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Skitarii unit. Until the start of your next Command phase, choose one: that unit adds 1 to hit rolls for ranged attacks, OR adds 1 to hit rolls for melee attacks.",
+              "phase": "shooting",
+              "when": "Your Shooting phase, just before a Skitarii unit is selected to shoot",
+              "effect": "Until end of phase, add 1 to Wound rolls made by models in that unit, provided there are no other enemy units within 6\" of the target.",
               "restriction": "Skitarii units only"
             },
             {
-              "id": "shc-rad-bombardment",
-              "name": "Rad Bombardment",
-              "cp": 2,
-              "phase": "shooting",
-              "when": "Your Shooting phase",
-              "effect": "Select one enemy unit within 24\" of a friendly Skitarii unit. Until the start of your next Command phase, subtract 1 from the Toughness characteristic of that enemy unit.",
-              "restriction": "Can only affect one enemy unit per battle"
+              "id": "shc-programmed-withdrawal",
+              "name": "Programmed Withdrawal",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase",
+              "effect": "Remove up to two SICARIAN units, or one SKITARII INFANTRY or SKITARII MOUNTED unit, from the battlefield and place them into Strategic Reserves. They can arrive in subsequent turns.",
+              "restriction": "SICARIAN, SKITARII INFANTRY, or SKITARII MOUNTED units only. Units cannot be in Engagement Range of any enemy."
             },
             {
-              "id": "shc-binharic-chant",
-              "name": "Binharic Override",
+              "id": "shc-shroud-protocols",
+              "name": "Shroud Protocols",
               "cp": 1,
-              "phase": "command",
-              "when": "Your Command phase",
-              "effect": "Select one friendly Tech-Priest unit. Until the start of your next Command phase, friendly Skitarii units within 6\" of that Tech-Priest re-roll hit rolls of 1.",
-              "restriction": "Tech-Priest units only"
-            },
-            {
-              "id": "shc-galvanic-volley",
-              "name": "Galvanic Volley",
-              "cp": 1,
-              "phase": "shooting",
-              "when": "Your Shooting phase, before a Skitarii unit shoots",
-              "effect": "Until end of phase, the Heavy characteristic of that unit's ranged weapons is increased by 2 and the Rapid Fire value is doubled.",
-              "restriction": "Skitarii units that have not moved this turn"
-            },
-            {
-              "id": "shc-machine-spirits",
-              "name": "Unrelenting Calculation",
-              "cp": 1,
-              "phase": "fight",
-              "when": "Fight phase, when a friendly unit is selected to fight",
-              "effect": "Until end of phase, that unit ignores negative modifiers to its hit rolls and adds 1 to its Strength characteristic.",
-              "restriction": "Adeptus Mechanicus units only"
+              "phase": "reaction",
+              "when": "Opponent's Shooting phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, enemy units cannot target that unit unless they are within 18\" of it. If any enemy unit is already within 18\", it can still target normally.",
+              "restriction": "Skitarii units only"
             }
           ]
         }
