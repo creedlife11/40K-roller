@@ -186,6 +186,66 @@
               "restriction": "Blood Angels units only"
             }
           ]
+        },
+        {
+          "id": "rage-cursed-onslaught",
+          "name": "Rage-Cursed Onslaught",
+          "stratagems": [
+            {
+              "id": "rco-armour-of-contempt",
+              "name": "Armour of Contempt",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, worsen the AP of all attacks that target that unit by 1 (e.g. AP-2 becomes AP-1).",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "rco-red-wrath",
+              "name": "Red Wrath",
+              "cp": 1,
+              "phase": "movement",
+              "when": "Your Movement phase, just after a friendly unit Advances",
+              "effect": "Until end of turn, that unit can either shoot or charge. If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), until end of turn it can both shoot and charge.",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "rco-limb-from-limb",
+              "name": "Limb from Limb",
+              "cp": 1,
+              "phase": "fight",
+              "when": "Fight phase, just before a friendly unit that made a Charge move this turn is selected to fight",
+              "effect": "Until end of phase, improve either the Strength or AP of melee weapons in that unit by 1 (your choice). If you choose instead to have that unit succumb to the Red Thirst (it becomes Battle-shocked), improve both.",
+              "restriction": "Adeptus Astartes units only"
+            },
+            {
+              "id": "rco-grim-warning",
+              "name": "A Grim Warning",
+              "cp": 1,
+              "phase": "any",
+              "when": "Any phase, just after a friendly Blood Angels unit is destroyed while within range of an objective marker you control",
+              "effect": "That objective marker remains under your control even though you have no models within range of it (it remains under your control until your opponent controls it).",
+              "restriction": "Blood Angels units only"
+            },
+            {
+              "id": "rco-insensate-rampage",
+              "name": "Insensate Rampage",
+              "cp": 1,
+              "phase": "reaction",
+              "when": "Opponent's Shooting or Fight phase, just after an enemy unit has selected its targets",
+              "effect": "Until end of phase, that unit has the Feel No Pain 5+ ability.",
+              "restriction": "Death Company units only"
+            },
+            {
+              "id": "rco-deathless-duty",
+              "name": "Deathless Duty",
+              "cp": 2,
+              "phase": "fight",
+              "when": "Fight phase, when a friendly Death Company unit has been selected as the target of attacks",
+              "effect": "Until end of phase, each time a model in that unit is destroyed without having fought this phase, do not remove it from play — it can fight after the attacking unit has finished making its attacks, and is then removed.",
+              "restriction": "Death Company units only"
+            }
+          ]
         }
       ]
     },
